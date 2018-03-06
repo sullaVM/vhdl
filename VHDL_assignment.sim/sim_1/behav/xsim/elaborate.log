@@ -1,6 +1,6 @@
 Vivado Simulator 2017.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 76db21506b28405ebb8242dda7692d00 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot full_adder_tb_behav xil_defaultlib.full_adder_tb -log elaborate.log 
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 76db21506b28405ebb8242dda7692d00 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot arithmetic_circuit_mux_tb_behav xil_defaultlib.arithmetic_circuit_mux_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -12,6 +12,6 @@ Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.std_logic_arith
 Compiling package ieee.std_logic_unsigned
-Compiling architecture behavioral of entity xil_defaultlib.full_adder [full_adder_default]
-Compiling architecture behavioral of entity xil_defaultlib.full_adder_tb
-Built simulation snapshot full_adder_tb_behav
+Compiling architecture behavioral of entity xil_defaultlib.arithmetic_circuit_mux [arithmetic_circuit_mux_default]
+Compiling architecture behavioral of entity xil_defaultlib.arithmetic_circuit_mux_tb
+Built simulation snapshot arithmetic_circuit_mux_tb_behav

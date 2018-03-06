@@ -95,8 +95,9 @@ architecture Behavioral of reg_file is
 -- signals
 signal load_reg0, load_reg1, load_reg2, load_reg3, 
         load_reg4, load_reg5, load_reg6, load_reg7 : std_logic;
+signal a_s, b_s : std_logic_vector(2 downto 0) := "000";
 signal reg0_q, reg1_q, reg2_q, reg3_q, reg4_q, reg5_q, reg6_q, reg7_q,
-        data_src_mux_out, src_reg : std_logic_vector(15 downto 0);
+        data_src_mux_out, src_reg, a_select_z, b_select_z : std_logic_vector(15 downto 0);
     
 begin
 -- port maps
@@ -189,8 +190,8 @@ begin
         In5 => reg5_q,
         In6 => reg6_q,
         In7 => reg7_q,
-        s => s,
-        Z => src_reg
+        s => b_s,
+        Z => b_select_z
     );
     
     a_select_mux : mux8_16bit PORT MAP (
@@ -202,9 +203,9 @@ begin
         In5 => reg5_q,
         In6 => reg6_q,
         In7 => reg7_q,
-        s => s,
-        Z => src_reg
-);
+        s => a_s,
+        Z => a_select_z
+    );
 
 reg0 <= reg0_q; 
 reg1 <= reg1_q; 
