@@ -42,22 +42,22 @@ end arithmetic_circuit_mux;
 architecture Behavioral of arithmetic_circuit_mux is
 
 begin
-    y(0) <= (ar_b(0) and sel_0) or ((not ar_b(0)) and sel_1);
-    y(1) <= (ar_b(1) and sel_0) or ((not ar_b(1)) and sel_1);    
-    y(2) <= (ar_b(2) and sel_0) or ((not ar_b(2)) and sel_1);    
-    y(3) <= (ar_b(3) and sel_0) or ((not ar_b(3)) and sel_1);    
-    y(4) <= (ar_b(4) and sel_0) or ((not ar_b(4)) and sel_1);    
-    y(5) <= (ar_b(5) and sel_0) or ((not ar_b(5)) and sel_1);    
-    y(6) <= (ar_b(6) and sel_0) or ((not ar_b(6)) and sel_1);    
-    y(7) <= (ar_b(7) and sel_0) or ((not ar_b(7)) and sel_1);    
-    y(8) <= (ar_b(8) and sel_0) or ((not ar_b(8)) and sel_1);    
-    y(9) <= (ar_b(9) and sel_0) or ((not ar_b(9)) and sel_1);    
-    y(10) <= (ar_b(10) and sel_0) or ((not ar_b(10)) and sel_1);    
-    y(11) <= (ar_b(11) and sel_0) or ((not ar_b(11)) and sel_1);    
-    y(12) <= (ar_b(12) and sel_0) or ((not ar_b(12)) and sel_1);    
-    y(13) <= (ar_b(13) and sel_0) or ((not ar_b(13)) and sel_1);    
-    y(14) <= (ar_b(14) and sel_0) or ((not ar_b(14)) and sel_1);    
-    y(15) <= (ar_b(15) and sel_0) or ((not ar_b(15)) and sel_1);    
+    y(0) <= (ar_b(0) and sel_1) or ((not ar_b(0)) and sel_0);
+    y(1) <= (ar_b(1) and sel_1) or ((not ar_b(1)) and sel_0);    
+    y(2) <= (ar_b(2) and sel_1) or ((not ar_b(2)) and sel_0);    
+    y(3) <= (ar_b(3) and sel_1) or ((not ar_b(3)) and sel_0);    
+    y(4) <= (ar_b(4) and sel_1) or ((not ar_b(4)) and sel_0);    
+    y(5) <= (ar_b(5) and sel_1) or ((not ar_b(5)) and sel_0);    
+    y(6) <= (ar_b(6) and sel_1) or ((not ar_b(6)) and sel_0);    
+    y(7) <= (ar_b(7) and sel_1) or ((not ar_b(7)) and sel_0);    
+    y(8) <= (ar_b(8) and sel_1) or ((not ar_b(8)) and sel_0);    
+    y(9) <= (ar_b(9) and sel_1) or ((not ar_b(9)) and sel_0);    
+    y(10) <= (ar_b(10) and sel_1) or ((not ar_b(10)) and sel_0);    
+    y(11) <= (ar_b(11) and sel_1) or ((not ar_b(11)) and sel_0);    
+    y(12) <= (ar_b(12) and sel_1) or ((not ar_b(12)) and sel_0);    
+    y(13) <= (ar_b(13) and sel_1) or ((not ar_b(13)) and sel_0);    
+    y(14) <= (ar_b(14) and sel_1) or ((not ar_b(14)) and sel_0);    
+    y(15) <= (ar_b(15) and sel_1) or ((not ar_b(15)) and sel_0);    
     
 
 end Behavioral;

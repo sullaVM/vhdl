@@ -45,7 +45,6 @@ architecture Behavioral of ripple_carry_adder_16 is
     END COMPONENT;
 
 signal C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15 : std_logic := '0';
---signal c : std_logic_vector(15 downto 1);
 
 begin
     Bit0 : full_adder PORT MAP (
@@ -146,6 +145,7 @@ begin
         y => a(15),
         z => C15,
         s => s(15),
-        c => c16);
+        c => C16);
+            
        
 end Behavioral;

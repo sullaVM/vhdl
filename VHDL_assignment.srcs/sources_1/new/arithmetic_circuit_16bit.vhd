@@ -57,26 +57,24 @@ architecture Behavioral of arithmetic_circuit_16bit is
     END COMPONENT;
     
     -- Signals
-    signal ar_a, ar_b : std_logic_vector(15 downto 0);
-    signal sel_0, sel_1 : std_logic;
-    signal c0, c16 : std_logic;
     signal y, s : std_logic_vector(15 downto 0); 
     
 
 begin
     mux : arithmetic_circuit_mux PORT MAP (
-        ar_b => ar_b,
-        sel_0 => sel_0,
-        sel_1 => sel_1,
+        ar_b => b,
+        sel_0 => s0,
+        sel_1 => s1,
         y => y
     );
     
     rca : ripple_carry_adder_16 PORT MAP (
-        b => ar_b,
-        a => ar_a,
-        c0 => c0,
-        s => s,
-        c16 => c16
+        b => y,
+        a => a,
+        c0 => cin,
+        s => g,
+        c16 => cout
     );
+    
         
 end Behavioral;
