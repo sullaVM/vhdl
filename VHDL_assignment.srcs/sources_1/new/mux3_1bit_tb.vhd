@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date: 03/11/2018 06:31:54 PM
+-- Create Date: 03/11/2018 06:51:37 PM
 -- Design Name: 
--- Module Name: shifter_unit - Behavioral
+-- Module Name: mux3_1bit_tb - Behavioral
 -- Project Name: 
 -- Target Devices: 
 -- Tool Versions: 
@@ -31,15 +31,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity shifter_unit is
-    Port (b_shift : in std_logic_vector(15 downto 0);
-          i_r, i_l : in std_logic;
-          s : in std_logic_vector(1 downto 0);
-          ser_l, ser_r : out std_logic;
-          h : out std_logic_vector(15 downto 0));
-end shifter_unit;
+entity mux3_1bit_tb is
+--  Port ( );
+end mux3_1bit_tb;
 
-architecture Behavioral of shifter_unit is
+architecture Behavioral of mux3_1bit_tb is
 
 begin
 
