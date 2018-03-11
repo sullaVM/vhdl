@@ -1,6 +1,6 @@
 Vivado Simulator 2017.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 76db21506b28405ebb8242dda7692d00 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot mux4_16bit_tb_behav xil_defaultlib.mux4_16bit_tb -log elaborate.log 
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 76db21506b28405ebb8242dda7692d00 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot arithmetic_lu_tb_behav xil_defaultlib.arithmetic_lu_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -10,6 +10,15 @@ Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.arithmetic_circuit_mux [arithmetic_circuit_mux_default]
+Compiling architecture behavioral of entity xil_defaultlib.full_adder [full_adder_default]
+Compiling architecture behavioral of entity xil_defaultlib.ripple_carry_adder_16 [ripple_carry_adder_16_default]
+Compiling architecture behavioral of entity xil_defaultlib.arithmetic_circuit_16bit [arithmetic_circuit_16bit_default]
 Compiling architecture behavioral of entity xil_defaultlib.mux4_16bit [mux4_16bit_default]
-Compiling architecture behavioral of entity xil_defaultlib.mux4_16bit_tb
-Built simulation snapshot mux4_16bit_tb_behav
+Compiling architecture behavioral of entity xil_defaultlib.logic_unit_16bit [logic_unit_16bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux2_16bit [mux2_16bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.arithmetic_logic_unit [arithmetic_logic_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.arithmetic_lu_tb
+Built simulation snapshot arithmetic_lu_tb_behav

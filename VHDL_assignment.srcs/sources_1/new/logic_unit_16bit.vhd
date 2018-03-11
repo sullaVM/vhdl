@@ -54,8 +54,8 @@ begin
     In2 <= a_log xor b_log;
     In3 <= not a_log;
     
-    s(0) <= s0_log;
-    s(1) <= s1_log;
+    s(1) <= s0_log;
+    s(0) <= s1_log;
     
     mux : mux4_16bit PORT MAP (
         In0 => In0,

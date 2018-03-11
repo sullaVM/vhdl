@@ -60,7 +60,7 @@ signal des :std_logic_vector(2 downto 0);
 signal data : std_logic_vector(15 downto 0);
 signal Clk : std_logic := '0';
 signal s : std_logic_vector(2 downto 0);
-constant Clk_time : time := 15ns;
+constant Clk_time : time := 10ns;
 
 -- Outputs
 signal reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7 : std_logic_vector(15 downto 0); 

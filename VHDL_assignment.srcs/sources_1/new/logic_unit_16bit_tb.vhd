@@ -61,11 +61,71 @@ begin
     
     stim_proc : process
     begin
+    
+        -- AND
         a_log <= "0000000000000000";
         b_log <= "0000000000000000";
         s0_log <= '0';
         s1_log <= '0';
         
+        wait for 10 ns;
+        a_log <= "0000000000000000";
+        b_log <= "0000000000000001";
+        s0_log <= '0';
+        s1_log <= '0';
+        
+        wait for 10 ns;
+        a_log <= "0000000000000001";
+        b_log <= "0000000000000001";
+        s0_log <= '0';
+        s1_log <= '0';
+        
+        -- OR
+        wait for 10 ns;
+        a_log <= "0000000000000000";
+        b_log <= "0000000000000000";
+        s0_log <= '0';
+        s1_log <= '1';
+        
+        wait for 10 ns;
+        a_log <= "0000000000000000";
+        b_log <= "0000000000000001";
+        s0_log <= '0';
+        s1_log <= '1';
+        
+        wait for 10 ns;
+        a_log <= "0000000000000001";
+        b_log <= "0000000000000001";
+        s0_log <= '0';
+        s1_log <= '1';
+        
+        -- XOR
+        wait for 10 ns;
+        a_log <= "0000000000000000";
+        b_log <= "0000000000000000";
+        s0_log <= '1';
+        s1_log <= '0';
+        
+        wait for 10 ns;
+        a_log <= "0000000000000000";
+        b_log <= "0000000000000001";
+        s0_log <= '1';
+        s1_log <= '0';
+        
+        wait for 10 ns;
+        a_log <= "0000000000000001";
+        b_log <= "0000000000000001";
+        s0_log <= '1';
+        s1_log <= '0';
+        
+        -- NOT
+        wait for 10 ns;
+        a_log <= "0000000000000001";
+        s0_log <= '1';
+        s1_log <= '1';
 
+    
+        wait;   
+    end process;
 
 end Behavioral;
