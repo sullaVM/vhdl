@@ -47,10 +47,10 @@ architecture Behavioral of shifter_unit_tb is
     -- Inputs
     signal b_shift : std_logic_vector(15 downto 0);
     signal i_r, i_l : std_logic := '0';
-    s : std_logic_vector(1 downto 0);
+    signal s : std_logic_vector(1 downto 0);
 
     -- Outputs
-    signal ser_1, ser_r : std_logic;
+    signal ser_l, ser_r : std_logic;
     signal h : std_logic_vector(15 downto 0);
 
 begin
@@ -58,6 +58,7 @@ begin
         b_shift => b_shift,
         i_r => i_r,
         i_l => i_l,
+        s => s,
         ser_l => ser_l,
         ser_r => ser_r,
         h => h
@@ -73,6 +74,8 @@ begin
 
         wait for 10 ns;
         s <= "10";
+        
+        wait;
 
     end process;
 
