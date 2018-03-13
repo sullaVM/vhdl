@@ -40,10 +40,10 @@ end mux4_16bit;
 architecture Behavioral of mux4_16bit is
 
 begin
-    Z <= In0 when s = "00" else
-        In1 when s = "01" else 
-        In2 when s = "10" else 
-        In3 when s = "11" else 
+    Z <= In0 after 5 ns when s = "00" else
+        In1 after 5 ns when s = "01" else 
+        In2 after 5 ns when s = "10" else 
+        In3 after 5 ns when s = "11" else 
         "0000000000000000";
 
 end Behavioral;

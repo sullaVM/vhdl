@@ -40,9 +40,9 @@ end mux3_1bit;
 architecture Behavioral of mux3_1bit is
 
 begin
-    z <= in0 after 1 ns when s = "00" else
-        in1 after 1 ns when s = "01" else
-        in2 after 1 ns when s = "10" else
+    z <= in0 after 5 ns when s = "00" else
+        in1 after 5 ns when s = "01" else
+        in2 after 5 ns when s = "10" else
         '0';
 
 end Behavioral;

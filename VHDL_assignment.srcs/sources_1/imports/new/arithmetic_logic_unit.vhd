@@ -66,8 +66,8 @@ architecture Behavioral of arithmetic_logic_unit is
     END COMPONENT;
     
     -- Signals
-    signal ac_g, lu_g : std_logic_vector(15 downto 0);
-    
+    signal ac_g, lu_g : std_logic_vector(15 downto 0); 
+         
 begin
     ac : arithmetic_circuit_16bit PORT MAP (
         a => a_data,
@@ -94,4 +94,5 @@ begin
         Z => g_data
     );
 
+   
 end Behavioral;

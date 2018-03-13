@@ -48,7 +48,7 @@ architecture Behavioral of ripple_carry_adder_16_tb is
     signal c0 : std_logic := '0';
     
     -- Outputs
-    signal s : std_logic_vector(15 downto 0);
+    signal s : std_logic_vector(15 downto 0) := "0000000000000000";
     signal c16: std_logic;
         
 begin
@@ -63,23 +63,20 @@ begin
     
     stim_proc : process
     begin
-        wait for 10ns;
         c0 <= '0';
-        b <= "0000000000000000";
-        a <= "0000000000000000";
+        b <= "1010101010101010";
+        a <= "0101010101010101";
         
-        wait for 10ns;
-        a <= "0000000000000001";
-        
-        wait for 10ns;
-        b <= "0000000000000001";
-        a <= "0000000000000000";
-        
-        wait for 10ns;
-        b <= "0000000000000001";
-        a <= "0000000000000001";
-        
-        wait for 10ns;
+        wait for 10 ns;
         c0 <= '1';
+        b <= "1111111100000000";
+        a <= "0000000000000001";
+
+        wait for 10 ns;
+        c0 <= '1';
+        b <= "1111111111111111";
+        a <= "0000000000000001";
+        
+        wait;
     end process;
 end Behavioral;

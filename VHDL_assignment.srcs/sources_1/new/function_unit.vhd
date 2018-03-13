@@ -38,6 +38,7 @@ entity function_unit is
         i_r, i_l : in std_logic;
         mf_sel : in std_logic;
         ser_left, ser_right : out std_logic;
+        v, c, n, z_flag : out std_logic;
         z : out std_logic_vector(15 downto 0));
 end function_unit;
 
@@ -66,9 +67,16 @@ architecture Behavioral of function_unit is
           Z : out std_logic_vector(15 downto 0));
     end component;
     
+    COMPONENT flags
+        Port (res : in std_logic_vector(15 downto 0);
+            cin : in std_logic;
+            cout : in std_logic;
+            z, v, c, n : out std_logic);
+    END COMPONENT;
+    
     -- Signals
     signal z_alu, z_shf : std_logic_vector(15 downto 0);
-    signal cout : std_logic;
+    signal cin, cout : std_logic;
     signal i_right, i_left : std_logic := '0';
     
 begin
@@ -98,6 +106,16 @@ begin
         In1 => z_shf,
         s => mf_sel,
         Z => z
+    );
+    
+    fl : flags PORT MAP (
+        res => z_alu,
+        cin => cin,
+        cout => cout,
+        z => z_flag,
+        v => v,
+        c => c,
+        n => n
     );
 
 end Behavioral;

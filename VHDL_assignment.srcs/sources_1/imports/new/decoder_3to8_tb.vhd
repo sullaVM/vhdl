@@ -74,44 +74,46 @@ uut : decoder_3to8 PORT MAP (
 
 stim_proc : process
 begin
-    A0 <= '1';
-    A1 <= '0';
     A2 <= '0';
-
-    wait for 10 ns;
+    A1 <= '0';
     A0 <= '0';
-    A1 <= '0';
-    A2 <= '1';
 
     wait for 10 ns;
+    A2 <= '0';
+    A1 <= '0';
+    A0 <= '1';
+
+    wait for 10 ns;
+    A2 <= '0';
+    A1 <= '1';
     A0 <= '0';
-    A1 <= '1';
-    A2 <= '0';
 
     wait for 10 ns;
+    A2 <= '0';
+    A1 <= '1';
+    A0 <= '1';
+
+    wait for 10 ns;
+    A2 <= '1';
+    A1 <= '0';
     A0 <= '0';
-    A1 <= '1';
-    A2 <= '1';
 
     wait for 10 ns;
-    A0 <= '1';
+    A2 <= '1';
     A1 <= '0';
-    A2 <= '0';
+    A0 <= '1';
 
     wait for 10 ns;
-    A0 <= '1';
-    A1 <= '0';
     A2 <= '1';
+    A1 <= '1';
+    A0 <= '0';
 
     wait for 10 ns;
-    A0 <= '1';
-    A1 <= '1';
-    A2 <= '0';
-
-    wait for 10 ns;
-    A0 <= '1';
-    A1 <= '1';
     A2 <= '1';
+    A1 <= '1';
+    A0 <= '1';
+    
+    wait;
 end process;
 
 end Behavioral;

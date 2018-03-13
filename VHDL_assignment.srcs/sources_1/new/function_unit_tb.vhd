@@ -54,7 +54,7 @@ architecture Behavioral of function_unit_tb is
     
     -- Outputs
     signal ser_left, ser_right : std_logic;
-    signal z : std_logic_vector(15 downto 0);
+    signal z : std_logic_vector(15 downto 0) := "0000000000000000";
     
 begin
     
@@ -81,49 +81,49 @@ begin
         h_sel <= "00";
         mf_sel <= '0';
         
-        wait for 10 ns;
+        wait for 20 ns;
         a <= "0000000000000000";
         b <= "0000000000000001";
         g_sel <= "0001";
         h_sel <= "00";
         mf_sel <= '0';
         
-        wait for 10 ns;
+        wait for 20 ns;
         a <= "0000000000000001";
         b <= "0000000000000001";
         g_sel <= "0010";
         h_sel <= "00";
         mf_sel <= '0';
                 
-        wait for 10 ns;
+        wait for 20 ns;
         a <= "0000000000000001";
         b <= "0000000000000000";
         g_sel <= "0011";
         h_sel <= "00";
         mf_sel <= '0';    
         
-        wait for 10 ns;
+        wait for 20 ns;
         a <= "0000000000000001";
         b <= "1111111111111111";
         g_sel <= "0100";
         h_sel <= "01";
         mf_sel <= '0';
         
-        wait for 10 ns;
+        wait for 20 ns;
         a <= "0000000000000000";
         b <= "1111111111111111";
         g_sel <= "0101";
         h_sel <= "01";
         mf_sel <= '0';
         
-        wait for 10 ns;
+        wait for 20 ns;
         a <= "0000000000000011";
         b <= "0000000000000001";
         g_sel <= "0110";
         h_sel <= "01";
         mf_sel <= '0';
         
-        wait for 10 ns;
+        wait for 20 ns;
         a <= "1111111111111111";
         b <= "1010101010101010";
         g_sel <= "0111";
@@ -132,28 +132,28 @@ begin
                
         --
         
-        wait for 10 ns;
+        wait for 20 ns;
         a <= "0000000000000001";
         b <= "0000000000000001";
         g_sel <= "1000";
         h_sel <= "00";
         mf_sel <= '0';
         
-        wait for 10 ns;
+        wait for 20 ns;
         a <= "0000000000000000";
         b <= "1111111111111111";
         g_sel <= "1010";
         h_sel <= "10";
         mf_sel <= '0';
         
-        wait for 10 ns;
+        wait for 20 ns;
         a <= "0000000000000011";
         b <= "0000000000000001";
         g_sel <= "1100";
         h_sel <= "10";
         mf_sel <= '0';
         
-        wait for 10 ns;
+        wait for 20 ns;
         a <= "1111111111111111";
         b <= "1010101010101010";
         g_sel <= "1110";
@@ -162,21 +162,21 @@ begin
         
         --
         
-        wait for 10 ns;
+        wait for 20 ns;
         a <= "0000000000000000";
         b <= "1111111111111111";
         g_sel <= "0000";
         h_sel <= "00";
         mf_sel <= '1';
         
-        wait for 10 ns;
+        wait for 20 ns;
         a <= "0000000000000011";
         b <= "0000000000000001";
         g_sel <= "0100";
         h_sel <= "01";
         mf_sel <= '1';
         
-        wait for 10 ns;
+        wait for 20 ns;
         a <= "1111111111111111";
         b <= "1010101010101010";
         g_sel <= "1000";

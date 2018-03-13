@@ -38,11 +38,11 @@ end arithmetic_lu_tb;
 architecture Behavioral of arithmetic_lu_tb is
     COMPONENT arithmetic_logic_unit
         Port (a_data, b_data : in std_logic_vector(15 downto 0);
-          cin : in std_logic;
-          op_s1, op_s2 : in std_logic;
-          mode_s : in std_logic;
-          g_data : out std_logic_vector(15 downto 0);
-          cout : out std_logic);
+            cin : in std_logic;
+            op_s1, op_s2 : in std_logic;
+            mode_s : in std_logic;
+            g_data : out std_logic_vector(15 downto 0);
+            cout : out std_logic);
     END COMPONENT;
     
     -- Inputs
@@ -52,6 +52,7 @@ architecture Behavioral of arithmetic_lu_tb is
     -- Outputs
     signal g_data : std_logic_vector(15 downto 0);
     signal cout : std_logic;
+    
 begin
     uut : arithmetic_logic_unit PORT MAP (
         a_data => a_data,
@@ -76,7 +77,7 @@ begin
         cin <= '0';
 
         -- F = A + 1
-        wait for 10 ns;
+        wait for 20 ns;
         a_data <= "0000000000000001";
         b_data <= "0000000000000000";
         mode_s <= '0';
@@ -85,7 +86,7 @@ begin
         cin <= '1';
 
         -- F = A + B
-        wait for 10 ns;
+        wait for 20 ns;
         a_data <= "0000000000000001";
         b_data <= "0000000000000001";
         mode_s <= '0';
@@ -94,7 +95,7 @@ begin
         cin <= '0';
         
         -- F = A + B + 1
-        wait for 10 ns;
+        wait for 20 ns;
         a_data <= "0000000000000001";
         b_data <= "0000000000000001";
         mode_s <= '0';
@@ -103,7 +104,7 @@ begin
         cin <= '1';
 
         -- F = A + B'
-        wait for 10 ns;
+        wait for 20 ns;
         a_data <= "0000000000000001";
         b_data <= "1111111111111111";
         mode_s <= '0';
@@ -112,7 +113,7 @@ begin
         cin <= '0';
 
         -- F = A + B' + 1
-        wait for 10 ns;
+        wait for 20 ns;
         a_data <= "0000000000000001";
         b_data <= "1111111111111111";
         mode_s <= '0';
@@ -121,7 +122,7 @@ begin
         cin <= '1';
         
         -- F = A - 1
-        wait for 10 ns;
+        wait for 20 ns;
         a_data <= "0000000000000001";
         b_data <= "0000000000000000";
         mode_s <= '0';
@@ -130,7 +131,7 @@ begin
         cin <= '0';
 
         -- F = A
-        wait for 10 ns;
+        wait for 20 ns;
         a_data <= "0000000000000001";
         b_data <= "0000000000000001";
         mode_s <= '0';
@@ -140,7 +141,7 @@ begin
         
         -- Select LU
         -- F = A AND B
-        wait for 10 ns;
+        wait for 20 ns;
         a_data <= "0000000000000001";
         b_data <= "0000000000000001";
         mode_s <= '1';
@@ -149,7 +150,7 @@ begin
         cin <= '0';
         
         -- F = A OR B
-        wait for 10 ns;
+        wait for 20 ns;
         a_data <= "0000000000000001";
         b_data <= "0000000000000000";
         mode_s <= '1';
@@ -158,7 +159,7 @@ begin
         cin <= '0';
                 
         -- F = A XOR B
-        wait for 10 ns;
+        wait for 20 ns;
         a_data <= "0000000000000001";
         b_data <= "0000000000000001";
         mode_s <= '1';
@@ -167,7 +168,7 @@ begin
         cin <= '0';
                 
         -- F = NOT A
-        wait for 10 ns;
+        wait for 20 ns;
         a_data <= "0000000000000001";
         b_data <= "0000000000000001";
         mode_s <= '1';
