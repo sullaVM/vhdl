@@ -40,7 +40,8 @@ entity reg_file is
         rw, data_src : in std_logic;
         d_data : in std_logic_vector(15 downto 0);
         data : in std_logic_vector(15 downto 0);
-        bus_a, bus_b : out std_logic_vector(15 downto 0));
+        bus_a, bus_b : out std_logic_vector(15 downto 0);
+        reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7 : out std_logic_vector(15 downto 0));
 end reg_file;
 
 architecture Behavioral of reg_file is
@@ -206,5 +207,14 @@ begin
         s => data_src,
         Z => bus_b
     );
+    
+    reg0 <= reg0_q;
+    reg1 <= reg1_q;
+    reg2 <= reg2_q;
+    reg3 <= reg3_q;
+    reg4 <= reg4_q;
+    reg5 <= reg5_q;
+    reg6 <= reg6_q;
+    reg7 <= reg7_q;
     
 end Behavioral;

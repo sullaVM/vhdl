@@ -42,7 +42,9 @@ COMPONENT reg_file
       rw, data_src : in std_logic;
       d_data : in std_logic_vector(15 downto 0);
       data : in std_logic_vector(15 downto 0);
-      bus_a, bus_b : out std_logic_vector(15 downto 0));
+      bus_a, bus_b : out std_logic_vector(15 downto 0);
+      reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7 : out std_logic_vector(15 downto 0));
+
 END COMPONENT;
 
 -- Inputs
@@ -54,6 +56,8 @@ constant Clk_time : time := 30ns;
 
 -- Outputs
 signal bus_a, bus_b : std_logic_vector(15 downto 0); 
+signal z_reg0, z_reg1, z_reg2, z_reg3, 
+  z_reg4, z_reg5, z_reg6, z_reg7 : std_logic_vector(15 downto 0);
 
 begin
     Clk <= not Clk after Clk_time / 2;
@@ -68,7 +72,15 @@ begin
         d_data => d_data,
         data => data,
         bus_a => bus_a,
-        bus_b => bus_b
+        bus_b => bus_b,
+        reg0 => z_reg0, 
+        reg1 => z_reg1, 
+        reg2 => z_reg2, 
+        reg3 => z_reg3, 
+        reg4 => z_reg4, 
+        reg5 => z_reg5, 
+        reg6 => z_reg6, 
+        reg7 => z_reg7
     );
  
 stim_proc : process
