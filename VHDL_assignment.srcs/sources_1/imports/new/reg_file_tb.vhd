@@ -91,8 +91,8 @@ stim_proc : process
         rw <= '1';
         mux_a_s <= "000";
         mux_b_s <= "000";
-        decoder_s <= "000";
-        data_src <= '0';
+        decoder_s <= "001";
+        data_src <= '1';
         data <= x"FA2E";
         
         wait for 30 ns;

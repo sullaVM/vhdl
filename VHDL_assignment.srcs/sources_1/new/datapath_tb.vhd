@@ -53,7 +53,8 @@ architecture Behavioral of datapath_tb is
 begin
     stim_proc : process
     begin
-        cw <= "00000000000000001";
+        cw <= "00000000000000011";
+        const <= x"FFFF";
         data_d_in <= x"FFFF";
         
         wait for 30 ns;

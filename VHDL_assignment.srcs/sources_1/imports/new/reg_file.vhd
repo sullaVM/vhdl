@@ -86,8 +86,8 @@ architecture Behavioral of reg_file is
     
 -- signals
 signal load_reg0, load_reg1, load_reg2, load_reg3, 
-        load_reg4, load_reg5, load_reg6, load_reg7 : std_logic;
-signal reg0_q, reg1_q, reg2_q, reg3_q, reg4_q, reg5_q, reg6_q, reg7_q,
+        load_reg4, load_reg5, load_reg6, load_reg7, load_reg8 : std_logic;
+signal reg0_q, reg1_q, reg2_q, reg3_q, reg4_q, reg5_q, reg6_q, reg7_q,reg8_q,
         data_src_mux_out, src_reg, a_select_z, b_select_z : std_logic_vector(15 downto 0);
     
 begin
@@ -148,6 +148,13 @@ begin
         load => load_reg7,
         Clk => Clk,
         Q => reg7_q);
+        
+    -- reg 8
+    reg08: reg PORT MAP (
+        D => d_data,
+        load => load_reg8,
+        Clk => Clk,
+        Q => reg8_q);
 
     -- destination register decoder
     des_decoder_2to8: decoder_3to8 PORT MAP (
@@ -157,11 +164,11 @@ begin
         Q0 => load_reg0, 
         Q1 => load_reg1, 
         Q2 => load_reg2, 
-        Q3 => load_reg3,
-        Q4 => load_reg4,
-        Q5 => load_reg5,
-        Q6 => load_reg6,
-        Q7 => load_reg7
+        Q3 => load_reg3, 
+        Q4 => load_reg4, 
+        Q5 => load_reg5, 
+        Q6 => load_reg6, 
+        Q7 => load_reg7 
      );
      
      load_reg0 <= load_reg0 and rw;
