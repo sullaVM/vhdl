@@ -98,63 +98,63 @@ begin
         D => d_data,
         load => load_reg0,
         Clk => Clk,
-        Q => reg0_q);
+        Q => reg0);
     
     -- reg 1
     reg01: reg PORT MAP (
         D => d_data,
         load => load_reg1,
         Clk => Clk,
-        Q => reg1_q);
+        Q => reg1);
 
     -- reg 2
     reg02: reg PORT MAP (
         D => d_data,
         load => load_reg2,
         Clk => Clk,
-        Q => reg2_q);
+        Q => reg2);
 
     -- reg 3
     reg03: reg PORT MAP (
         D => d_data,
         load => load_reg3,
         Clk => Clk,
-        Q => reg3_q);
+        Q => reg3);
 
     -- reg 4
     reg04: reg PORT MAP (
         D => d_data,
         load => load_reg4,
         Clk => Clk,
-        Q => reg4_q);
+        Q => reg4);
 
     -- reg 5
     reg05: reg PORT MAP (
         D => d_data,
         load => load_reg5,
         Clk => Clk,
-        Q => reg5_q);
+        Q => reg5);
 
     -- reg 6
     reg06: reg PORT MAP (
         D => d_data,
         load => load_reg6,
         Clk => Clk,
-        Q => reg6_q);
+        Q => reg6);
     
     -- reg 7
     reg07: reg PORT MAP (
         D => d_data,
         load => load_reg7,
         Clk => Clk,
-        Q => reg7_q);
+        Q => reg7);
         
     -- reg 8
-    reg08: reg PORT MAP (
-        D => d_data,
-        load => load_reg8,
-        Clk => Clk,
-        Q => reg8_q);
+--    reg08: reg PORT MAP (
+--        D => d_data,
+--        load => load_reg8,
+--        Clk => Clk,
+--        Q => reg8);
 
     -- destination register decoder
     des_decoder_2to8: decoder_3to8 PORT MAP (

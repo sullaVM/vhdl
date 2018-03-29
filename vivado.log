@@ -2,105 +2,286 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Mon Mar 12 17:25:23 2018
-# Process ID: 5260
-# Current directory: C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7252 C:\Users\Netsoc\Documents\sul-vhdl\VHDL_assignment\VHDL_assignment.xpr
-# Log file: C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/vivado.log
-# Journal file: C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment\vivado.jou
+# Start of session at: Thu Mar 29 17:06:03 2018
+# Process ID: 6616
+# Current directory: U:/Computer Arch/VHDL_assignment
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9856 U:\Computer Arch\VHDL_assignment\VHDL_assignment.xpr
+# Log file: U:/Computer Arch/VHDL_assignment/vivado.log
+# Journal file: U:/Computer Arch/VHDL_assignment\vivado.jou
 #-----------------------------------------------------------
 start_gui
-exit
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 12 17:26:28 2018...
-L_assignment/VHDL_assignment.xpr
-INFO: [Project 1-313] Project file moved from 'U:/Computer Arch/VHDL_assignment' since last save.
+open_project {U:/Computer Arch/VHDL_assignment/VHDL_assignment.xpr}
 Scanning sources...
 Finished scanning sources
-INFO: [Project 1-573] Overriding 'synth_1' run's part, 'xc7k325tffg900-2', with new part: 'xc7k70tfbv676-1'.
-INFO: [Project 1-573] Overriding 'impl_1' run's part, 'xc7k325tffg900-2', with new part: 'xc7k70tfbv676-1'.
-INFO: [Project 1-563] Overriding project part, 'xc7k325tffg900-2', with new part: 'xc7k70tfbv676-1'.
-CRITICAL WARNING: [Board 49-67] The board_part definition was not found for xilinx.com:kc705:part0:1.5. This can happen sometimes when you use custom board part. You can resolve this issue by setting 'board.repoPaths' parameter, pointing to the location of custom board files. Valid board_part values can be retrieved with the 'get_board_parts' Tcl command.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2017.4/data/ip'.
-open_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:21 . Memory (MB): peak = 679.547 ; gain = 52.547
-set_property top shifter_unit_tb [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:]
-WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit_tb.vhd:]
-ERROR: [Common 17-180] Spawn failed: No error
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.4/data/ip'.
+open_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 831.746 ; gain = 132.445
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7k70tfbv676-1
+Top: datapath
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 920.039 ; gain = 85.188
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'datapath' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:40]
+INFO: [Synth 8-3491] module 'reg_file' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:37' bound to instance 'register_file' of component 'reg_file' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:80]
+INFO: [Synth 8-638] synthesizing module 'reg_file' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:47]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg00' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:97]
+INFO: [Synth 8-638] synthesizing module '\reg ' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:42]
+INFO: [Synth 8-256] done synthesizing module '\reg ' (1#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:42]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg01' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:104]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg02' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:111]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg03' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:118]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg04' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:125]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg05' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:132]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg06' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:139]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg07' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:146]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg08' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:153]
+INFO: [Synth 8-3491] module 'decoder_3to8' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/decoder_3to8.vhd:36' bound to instance 'des_decoder_2to8' of component 'decoder_3to8' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:160]
+INFO: [Synth 8-638] synthesizing module 'decoder_3to8' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/decoder_3to8.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'decoder_3to8' (2#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/decoder_3to8.vhd:50]
+INFO: [Synth 8-3491] module 'mux8_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux8_16bit.vhd:36' bound to instance 'b_select_mux' of component 'mux8_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:184]
+INFO: [Synth 8-638] synthesizing module 'mux8_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux8_16bit.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'mux8_16bit' (3#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux8_16bit.vhd:42]
+INFO: [Synth 8-3491] module 'mux8_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux8_16bit.vhd:36' bound to instance 'a_select_mux' of component 'mux8_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:197]
+INFO: [Synth 8-3491] module 'mux2_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit.vhd:36' bound to instance 'mux_B' of component 'mux2_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:211]
+INFO: [Synth 8-638] synthesizing module 'mux2_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'mux2_16bit' (4#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit.vhd:43]
+WARNING: [Synth 8-3848] Net load_reg8 in module/entity reg_file does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:89]
+INFO: [Synth 8-256] done synthesizing module 'reg_file' (5#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:47]
+WARNING: [Synth 8-5640] Port 'v' is missing in component declaration [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:51]
+WARNING: [Synth 8-5640] Port 'c' is missing in component declaration [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:51]
+WARNING: [Synth 8-5640] Port 'n' is missing in component declaration [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:51]
+WARNING: [Synth 8-5640] Port 'z_flag' is missing in component declaration [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:51]
+INFO: [Synth 8-3491] module 'function_unit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:34' bound to instance 'fu' of component 'function_unit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'function_unit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:45]
+INFO: [Synth 8-3491] module 'arithmetic_logic_unit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_logic_unit.vhd:34' bound to instance 'alu' of component 'arithmetic_logic_unit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:83]
+INFO: [Synth 8-638] synthesizing module 'arithmetic_logic_unit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_logic_unit.vhd:43]
+INFO: [Synth 8-3491] module 'arithmetic_circuit_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_16bit.vhd:34' bound to instance 'ac' of component 'arithmetic_circuit_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_logic_unit.vhd:72]
+INFO: [Synth 8-638] synthesizing module 'arithmetic_circuit_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_16bit.vhd:42]
+INFO: [Synth 8-3491] module 'arithmetic_circuit_mux' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_mux.vhd:36' bound to instance 'mux' of component 'arithmetic_circuit_mux' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_16bit.vhd:64]
+INFO: [Synth 8-638] synthesizing module 'arithmetic_circuit_mux' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_mux.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'arithmetic_circuit_mux' (6#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_mux.vhd:42]
+INFO: [Synth 8-3491] module 'ripple_carry_adder_16' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:34' bound to instance 'rca' of component 'ripple_carry_adder_16' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_16bit.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'ripple_carry_adder_16' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:41]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit0' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'full_adder' (7#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:40]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit1' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:56]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit2' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:62]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit3' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:68]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit4' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:75]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit5' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:81]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit6' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:87]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit7' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:93]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit8' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:100]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit9' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:106]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit10' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:112]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit11' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:118]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit12' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:125]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit13' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:131]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit14' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:137]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit15' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:143]
+INFO: [Synth 8-256] done synthesizing module 'ripple_carry_adder_16' (8#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'arithmetic_circuit_16bit' (9#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_16bit.vhd:42]
+INFO: [Synth 8-3491] module 'logic_unit_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/logic_unit_16bit.vhd:34' bound to instance 'lu' of component 'logic_unit_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_logic_unit.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'logic_unit_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/logic_unit_16bit.vhd:40]
+INFO: [Synth 8-3491] module 'mux4_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux4_16bit.vhd:34' bound to instance 'mux' of component 'mux4_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/logic_unit_16bit.vhd:60]
+INFO: [Synth 8-638] synthesizing module 'mux4_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux4_16bit.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'mux4_16bit' (10#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux4_16bit.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'logic_unit_16bit' (11#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/logic_unit_16bit.vhd:40]
+INFO: [Synth 8-3491] module 'mux2_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit.vhd:36' bound to instance 'mux' of component 'mux2_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_logic_unit.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'arithmetic_logic_unit' (12#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_logic_unit.vhd:43]
+INFO: [Synth 8-3491] module 'shifter_unit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:34' bound to instance 'shifter' of component 'shifter_unit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:94]
+INFO: [Synth 8-638] synthesizing module 'shifter_unit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:42]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux0' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'mux3_1bit' (13#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:40]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux1' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:58]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux2' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:66]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux3' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:74]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux4' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:82]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux5' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:90]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux6' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:98]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux7' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:106]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux8' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:114]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux9' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:122]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux10' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:130]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux11' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:138]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux12' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:146]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux13' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:154]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux14' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:162]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux15' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:170]
+INFO: [Synth 8-256] done synthesizing module 'shifter_unit' (14#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit.vhd:36' bound to instance 'mux' of component 'mux2_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:104]
+INFO: [Synth 8-3491] module 'flags' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/flags.vhd:34' bound to instance 'fl' of component 'flags' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:111]
+INFO: [Synth 8-638] synthesizing module 'flags' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/flags.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'flags' (15#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/flags.vhd:41]
+WARNING: [Synth 8-3848] Net cin in module/entity function_unit does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:79]
+INFO: [Synth 8-256] done synthesizing module 'function_unit' (16#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:45]
+INFO: [Synth 8-3491] module 'mux2_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit.vhd:36' bound to instance 'mux_d' of component 'mux2_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:114]
+WARNING: [Synth 8-3848] Net reg0 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+WARNING: [Synth 8-3848] Net reg1 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+WARNING: [Synth 8-3848] Net reg2 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+WARNING: [Synth 8-3848] Net reg3 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+WARNING: [Synth 8-3848] Net reg4 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+WARNING: [Synth 8-3848] Net reg5 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+WARNING: [Synth 8-3848] Net reg6 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+WARNING: [Synth 8-3848] Net reg7 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'datapath' (17#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:40]
+WARNING: [Synth 8-3331] design function_unit has unconnected port i_r
+WARNING: [Synth 8-3331] design function_unit has unconnected port i_l
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[15]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[14]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[13]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[12]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[11]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[10]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[9]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[8]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[7]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[6]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[5]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[4]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[3]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[2]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[1]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[0]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[15]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[14]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[13]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[12]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[11]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[10]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[9]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[8]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[7]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[6]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[5]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[4]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[3]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[2]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[1]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[0]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[15]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[14]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[13]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[12]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[11]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[10]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[9]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[8]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[7]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[6]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[5]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[4]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[3]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[2]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[1]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[0]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[15]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[14]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[13]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[12]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[11]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[10]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[9]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[8]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[7]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[6]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[5]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[4]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[3]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[2]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[1]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[0]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[15]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[14]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[13]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[12]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[11]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[10]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[9]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[8]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[7]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[6]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[5]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[4]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[3]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[2]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[1]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[0]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[15]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[14]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[13]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[12]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[11]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[10]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[9]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[8]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[7]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[6]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[5]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[4]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[3]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[2]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[1]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[0]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg6[15]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg6[14]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 961.148 ; gain = 126.297
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin reg08:load to constant 0 [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:153]
+WARNING: [Synth 8-3295] tying undriven pin fl:cin to constant 0 [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:111]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 961.148 ; gain = 126.297
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1311.645 ; gain = 476.793
+97 Infos, 116 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1311.645 ; gain = 476.793
 launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'shifter_unit_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-54] Inspecting design source files for 'reg_file_tb' in fileset 'sim_1'...
 INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
-INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
-"xvhdl --incr --relax -prj shifter_unit_tb_vhdl.prj"
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity mux2_16bit
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux8_16bit.vhd" into library xil_defaultlib
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj reg_file_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux8_16bit.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity mux8_16bit
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity reg
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity reg_file
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity full_adder
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity full_adder_tb
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity ripple_carry_adder_16
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_16bit.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity arithmetic_circuit_16bit
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_mux.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity arithmetic_circuit_mux
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_mux_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity arithmetic_circuit_mux_tb
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_16bit_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity arithmetic_circuit_16bit_tb
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux4_16bit.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity mux4_16bit
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/logic_unit_16bit.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity logic_unit_16bit
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/logic_unit_16bit_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity logic_unit_16bit_tb
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_logic_unit.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity arithmetic_logic_unit
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_lu_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity arithmetic_lu_tb
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity shifter_unit
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity shifter_unit_tb
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity mux3_1bit
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity mux3_1bit_tb
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity reg_tb
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/decoder_3to8.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity decoder_3to8
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity reg_file_tb
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux8_16bit_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity mux8_16bit_tb
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux4_16bit_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity mux4_16bit_tb
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity mux2_16bit_tb
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/decoder_3to8_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity decoder_3to8_tb
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity ripple_carry_adder_16_tb
-INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
 Vivado Simulator 2017.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 76db21506b28405ebb8242dda7692d00 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot shifter_unit_tb_behav xil_defaultlib.shifter_unit_tb -log elaborate.log 
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 76db21506b28405ebb8242dda7692d00 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot reg_file_tb_behav xil_defaultlib.reg_file_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -110,29 +291,34 @@ Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
-Compiling architecture behavioral of entity xil_defaultlib.mux3_1bit [mux3_1bit_default]
-Compiling architecture behavioral of entity xil_defaultlib.shifter_unit [shifter_unit_default]
-Compiling architecture behavioral of entity xil_defaultlib.shifter_unit_tb
-Built simulation snapshot shifter_unit_tb_behav
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.reg [reg_default]
+Compiling architecture behavioral of entity xil_defaultlib.decoder_3to8 [decoder_3to8_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux8_16bit [mux8_16bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux2_16bit [mux2_16bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.reg_file [reg_file_default]
+Compiling architecture behavioral of entity xil_defaultlib.reg_file_tb
+Built simulation snapshot reg_file_tb_behav
 
 ****** Webtalk v2017.4 (64-bit)
   **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
   **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
     ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 
-source C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim/xsim.dir/shifter_unit_tb_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] 'C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim/xsim.dir/shifter_unit_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Mar 12 17:29:20 2018. For additional details about this file, please refer to the WebTalk help file at D:/Xilinx/Vivado/2017.4/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Mon Mar 12 17:29:20 2018...
-run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 788.813 ; gain = 4.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+source U:/Computer -notrace
+couldn't read file "U:/Computer": no such file or directory
+INFO: [Common 17-206] Exiting Webtalk at Thu Mar 29 17:15:37 2018...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1342.203 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
-   with args "shifter_unit_tb_behav -key {Behavioral:sim_1:Functional:shifter_unit_tb} -tclbatch {shifter_unit_tb.tcl} -log {simulate.log}"
+   with args "reg_file_tb_behav -key {Behavioral:sim_1:Functional:reg_file_tb} -tclbatch {reg_file_tb.tcl} -log {simulate.log}"
 INFO: [USF-XSim-8] Loading simulator feature
 Vivado Simulator 2017.4
 Time resolution is 1 ps
-source shifter_unit_tb.tcl
+source reg_file_tb.tcl
 # set curr_wave [current_wave_config]
 # if { [string length $curr_wave] == 0 } {
 #   if { [llength [get_objects]] > 0} {
@@ -143,52 +329,39 @@ source shifter_unit_tb.tcl
 #   }
 # }
 # run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'shifter_unit_tb_behav' loaded.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'reg_file_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:19 . Memory (MB): peak = 796.348 ; gain = 15.469
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 1344.223 ; gain = 2.020
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
-close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 803.371 ; gain = 0.070
 launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'shifter_unit_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-54] Inspecting design source files for 'reg_file_tb' in fileset 'sim_1'...
 INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-100] Fetching design files from 'sources_1'...(this may take a while)...
-INFO: [USF-XSim-101] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
-"xvhdl --incr --relax -prj shifter_unit_tb_vhdl.prj"
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity shifter_unit_tb
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj reg_file_tb_vhdl.prj"
 INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
 Vivado Simulator 2017.4
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 76db21506b28405ebb8242dda7692d00 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot shifter_unit_tb_behav xil_defaultlib.shifter_unit_tb -log elaborate.log 
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 76db21506b28405ebb8242dda7692d00 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot reg_file_tb_behav xil_defaultlib.reg_file_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling architecture behavioral of entity xil_defaultlib.mux3_1bit [mux3_1bit_default]
-Compiling architecture behavioral of entity xil_defaultlib.shifter_unit [shifter_unit_default]
-Compiling architecture behavioral of entity xil_defaultlib.shifter_unit_tb
-Built simulation snapshot shifter_unit_tb_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
 INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
-   with args "shifter_unit_tb_behav -key {Behavioral:sim_1:Functional:shifter_unit_tb} -tclbatch {shifter_unit_tb.tcl} -log {simulate.log}"
+   with args "reg_file_tb_behav -key {Behavioral:sim_1:Functional:reg_file_tb} -tclbatch {reg_file_tb.tcl} -log {simulate.log}"
 INFO: [USF-XSim-8] Loading simulator feature
 Vivado Simulator 2017.4
 Time resolution is 1 ps
-source shifter_unit_tb.tcl
+source reg_file_tb.tcl
 # set curr_wave [current_wave_config]
 # if { [string length $curr_wave] == 0 } {
 #   if { [llength [get_objects]] > 0} {
@@ -199,19 +372,249 @@ source shifter_unit_tb.tcl
 #   }
 # }
 # run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'shifter_unit_tb_behav' loaded.
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'reg_file_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 805.359 ; gain = 1.988
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1368.883 ; gain = 0.000
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1373.508 ; gain = 4.625
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'datapath' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:40]
+INFO: [Synth 8-3491] module 'reg_file' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:37' bound to instance 'register_file' of component 'reg_file' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:80]
+INFO: [Synth 8-638] synthesizing module 'reg_file' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:47]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg00' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:97]
+INFO: [Synth 8-638] synthesizing module '\reg ' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:42]
+INFO: [Synth 8-256] done synthesizing module '\reg ' (1#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:42]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg01' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:104]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg02' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:111]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg03' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:118]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg04' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:125]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg05' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:132]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg06' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:139]
+INFO: [Synth 8-3491] module 'reg' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd:36' bound to instance 'reg07' of component 'reg' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:146]
+INFO: [Synth 8-3491] module 'decoder_3to8' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/decoder_3to8.vhd:36' bound to instance 'des_decoder_2to8' of component 'decoder_3to8' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:160]
+INFO: [Synth 8-638] synthesizing module 'decoder_3to8' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/decoder_3to8.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'decoder_3to8' (2#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/decoder_3to8.vhd:50]
+INFO: [Synth 8-3491] module 'mux8_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux8_16bit.vhd:36' bound to instance 'b_select_mux' of component 'mux8_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:184]
+INFO: [Synth 8-638] synthesizing module 'mux8_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux8_16bit.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'mux8_16bit' (3#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux8_16bit.vhd:42]
+INFO: [Synth 8-3491] module 'mux8_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux8_16bit.vhd:36' bound to instance 'a_select_mux' of component 'mux8_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:197]
+INFO: [Synth 8-3491] module 'mux2_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit.vhd:36' bound to instance 'mux_B' of component 'mux2_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:211]
+INFO: [Synth 8-638] synthesizing module 'mux2_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'mux2_16bit' (4#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit.vhd:43]
+WARNING: [Synth 8-3848] Net reg0_q in module/entity reg_file does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:90]
+WARNING: [Synth 8-3848] Net reg1_q in module/entity reg_file does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:90]
+WARNING: [Synth 8-3848] Net reg2_q in module/entity reg_file does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:90]
+WARNING: [Synth 8-3848] Net reg3_q in module/entity reg_file does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:90]
+WARNING: [Synth 8-3848] Net reg4_q in module/entity reg_file does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:90]
+WARNING: [Synth 8-3848] Net reg5_q in module/entity reg_file does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:90]
+WARNING: [Synth 8-3848] Net reg6_q in module/entity reg_file does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:90]
+WARNING: [Synth 8-3848] Net reg7_q in module/entity reg_file does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'reg_file' (5#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd:47]
+WARNING: [Synth 8-5640] Port 'v' is missing in component declaration [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:51]
+WARNING: [Synth 8-5640] Port 'c' is missing in component declaration [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:51]
+WARNING: [Synth 8-5640] Port 'n' is missing in component declaration [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:51]
+WARNING: [Synth 8-5640] Port 'z_flag' is missing in component declaration [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:51]
+INFO: [Synth 8-3491] module 'function_unit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:34' bound to instance 'fu' of component 'function_unit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'function_unit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:45]
+INFO: [Synth 8-3491] module 'arithmetic_logic_unit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_logic_unit.vhd:34' bound to instance 'alu' of component 'arithmetic_logic_unit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:83]
+INFO: [Synth 8-638] synthesizing module 'arithmetic_logic_unit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_logic_unit.vhd:43]
+INFO: [Synth 8-3491] module 'arithmetic_circuit_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_16bit.vhd:34' bound to instance 'ac' of component 'arithmetic_circuit_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_logic_unit.vhd:72]
+INFO: [Synth 8-638] synthesizing module 'arithmetic_circuit_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_16bit.vhd:42]
+INFO: [Synth 8-3491] module 'arithmetic_circuit_mux' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_mux.vhd:36' bound to instance 'mux' of component 'arithmetic_circuit_mux' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_16bit.vhd:64]
+INFO: [Synth 8-638] synthesizing module 'arithmetic_circuit_mux' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_mux.vhd:42]
+INFO: [Synth 8-256] done synthesizing module 'arithmetic_circuit_mux' (6#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_mux.vhd:42]
+INFO: [Synth 8-3491] module 'ripple_carry_adder_16' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:34' bound to instance 'rca' of component 'ripple_carry_adder_16' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_16bit.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'ripple_carry_adder_16' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:41]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit0' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'full_adder' (7#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:40]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit1' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:56]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit2' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:62]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit3' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:68]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit4' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:75]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit5' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:81]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit6' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:87]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit7' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:93]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit8' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:100]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit9' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:106]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit10' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:112]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit11' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:118]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit12' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:125]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit13' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:131]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit14' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:137]
+INFO: [Synth 8-3491] module 'full_adder' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd:35' bound to instance 'Bit15' of component 'full_adder' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:143]
+INFO: [Synth 8-256] done synthesizing module 'ripple_carry_adder_16' (8#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'arithmetic_circuit_16bit' (9#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_16bit.vhd:42]
+INFO: [Synth 8-3491] module 'logic_unit_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/logic_unit_16bit.vhd:34' bound to instance 'lu' of component 'logic_unit_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_logic_unit.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'logic_unit_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/logic_unit_16bit.vhd:40]
+INFO: [Synth 8-3491] module 'mux4_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux4_16bit.vhd:34' bound to instance 'mux' of component 'mux4_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/logic_unit_16bit.vhd:60]
+INFO: [Synth 8-638] synthesizing module 'mux4_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux4_16bit.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'mux4_16bit' (10#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux4_16bit.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'logic_unit_16bit' (11#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/logic_unit_16bit.vhd:40]
+INFO: [Synth 8-3491] module 'mux2_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit.vhd:36' bound to instance 'mux' of component 'mux2_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_logic_unit.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'arithmetic_logic_unit' (12#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_logic_unit.vhd:43]
+INFO: [Synth 8-3491] module 'shifter_unit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:34' bound to instance 'shifter' of component 'shifter_unit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:94]
+INFO: [Synth 8-638] synthesizing module 'shifter_unit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:42]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux0' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:40]
+INFO: [Synth 8-256] done synthesizing module 'mux3_1bit' (13#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:40]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux1' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:58]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux2' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:66]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux3' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:74]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux4' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:82]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux5' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:90]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux6' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:98]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux7' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:106]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux8' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:114]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux9' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:122]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux10' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:130]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux11' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:138]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux12' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:146]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux13' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:154]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux14' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:162]
+INFO: [Synth 8-3491] module 'mux3_1bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd:34' bound to instance 'mux15' of component 'mux3_1bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:170]
+INFO: [Synth 8-256] done synthesizing module 'shifter_unit' (14#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd:42]
+INFO: [Synth 8-3491] module 'mux2_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit.vhd:36' bound to instance 'mux' of component 'mux2_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:104]
+INFO: [Synth 8-3491] module 'flags' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/flags.vhd:34' bound to instance 'fl' of component 'flags' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:111]
+INFO: [Synth 8-638] synthesizing module 'flags' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/flags.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'flags' (15#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/flags.vhd:41]
+WARNING: [Synth 8-3848] Net cin in module/entity function_unit does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:79]
+INFO: [Synth 8-256] done synthesizing module 'function_unit' (16#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:45]
+INFO: [Synth 8-3491] module 'mux2_16bit' declared at 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit.vhd:36' bound to instance 'mux_d' of component 'mux2_16bit' [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:114]
+WARNING: [Synth 8-3848] Net reg0 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+WARNING: [Synth 8-3848] Net reg1 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+WARNING: [Synth 8-3848] Net reg2 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+WARNING: [Synth 8-3848] Net reg3 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+WARNING: [Synth 8-3848] Net reg4 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+WARNING: [Synth 8-3848] Net reg5 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+WARNING: [Synth 8-3848] Net reg6 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+WARNING: [Synth 8-3848] Net reg7 in module/entity datapath does not have driver. [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:37]
+INFO: [Synth 8-256] done synthesizing module 'datapath' (17#1) [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd:40]
+WARNING: [Synth 8-3331] design function_unit has unconnected port i_r
+WARNING: [Synth 8-3331] design function_unit has unconnected port i_l
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[15]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[14]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[13]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[12]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[11]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[10]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[9]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[8]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[7]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[6]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[5]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[4]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[3]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[2]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[1]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg0[0]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[15]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[14]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[13]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[12]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[11]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[10]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[9]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[8]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[7]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[6]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[5]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[4]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[3]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[2]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[1]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg1[0]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[15]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[14]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[13]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[12]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[11]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[10]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[9]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[8]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[7]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[6]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[5]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[4]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[3]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[2]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[1]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg2[0]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[15]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[14]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[13]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[12]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[11]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[10]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[9]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[8]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[7]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[6]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[5]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[4]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[3]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[2]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[1]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg3[0]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[15]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[14]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[13]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[12]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[11]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[10]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[9]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[8]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[7]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[6]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[5]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[4]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[3]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[2]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[1]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg4[0]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[15]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[14]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[13]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[12]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[11]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[10]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[9]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[8]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[7]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[6]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[5]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[4]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[3]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[2]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[1]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg5[0]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg6[15]
+WARNING: [Synth 8-3331] design datapath has unconnected port reg6[14]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1410.176 ; gain = 41.293
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin fl:cin to constant 0 [U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd:111]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1410.176 ; gain = 41.293
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 1423.906 ; gain = 55.023
 close_sim
 INFO: [Simtcl 6-16] Simulation closed
-close [ open C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd w ]
-add_files C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd
-close [ open C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit_tb.vhd w ]
-add_files C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit_tb.vhd
-export_ip_user_files -of_objects  [get_files C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit_tb.vhd] -no_script -reset -force -quiet
-remove_files  C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit_tb.vhd
-file delete -force C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit_tb.vhd
-close [ open C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit_tb.vhd w ]
-add_files C:/Users/Netsoc/Documents/sul-vhdl/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit_tb.vhd
 exit
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 12 18:54:43 2018...
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 29 17:35:04 2018...

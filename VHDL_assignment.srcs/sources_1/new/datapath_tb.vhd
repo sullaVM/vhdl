@@ -53,6 +53,16 @@ architecture Behavioral of datapath_tb is
 begin
     stim_proc : process
     begin
+        z_reg0 <= "0000000000000000";
+        z_reg1 <= "1111111111111111";
+        z_reg2 <= "1010101010101010";
+        z_reg3 <= "0011001100110011";
+        z_reg4 <= "1100110011001100";
+        z_reg5 <= "1110001110001110";
+        z_reg6 <= "0000000000000001";
+        z_reg7 <= "0000000000000010";
+        
+        wait for 30 ns;
         cw <= "00000000000000011";
         const <= x"FFFF";
         data_d_in <= x"FFFF";
