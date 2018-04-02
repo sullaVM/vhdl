@@ -37,6 +37,7 @@ entity function_unit is
         h_sel : in std_logic_vector(1 downto 0);
         i_r, i_l : in std_logic;
         mf_sel : in std_logic;
+        Clk : in std_logic;
         ser_left, ser_right : out std_logic;
         v, c, n, z_flag : out std_logic;
         z : out std_logic_vector(15 downto 0));
@@ -78,6 +79,7 @@ architecture Behavioral of function_unit is
     signal z_alu, z_shf : std_logic_vector(15 downto 0);
     signal cin, cout : std_logic;
     signal i_right, i_left : std_logic := '0';
+    signal f_out : std_logic_vector(15 downto 0);
     
 begin
     alu : arithmetic_logic_unit port map (
@@ -105,7 +107,7 @@ begin
         In0 => z_alu,
         In1 => z_shf,
         s => mf_sel,
-        Z => z
+        Z => f_out
     );
     
     fl : flags PORT MAP (
@@ -117,5 +119,12 @@ begin
         c => c,
         n => n
     );
+    
+    process(Clk)
+         begin
+            if (rising_edge(Clk)) then 
+                z <= f_out;
+            end if;
+    end process; 
 
 end Behavioral;

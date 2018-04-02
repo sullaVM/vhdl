@@ -16,6 +16,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7k70tfbv676-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -28,22 +30,11 @@ set_property target_language Verilog [current_project]
 set_property ip_output_repo {u:/Computer Arch/VHDL_assignment/VHDL_assignment.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
-  {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_16bit.vhd}
-  {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_circuit_mux.vhd}
-  {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/arithmetic_logic_unit.vhd}
   {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/decoder_3to8.vhd}
-  {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/flags.vhd}
-  {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd}
-  {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/function_unit.vhd}
-  {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/logic_unit_16bit.vhd}
   {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux2_16bit.vhd}
-  {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux3_1bit.vhd}
-  {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux4_16bit.vhd}
   {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/mux8_16bit.vhd}
   {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg.vhd}
   {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/reg_file.vhd}
-  {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd}
-  {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/imports/new/shifter_unit.vhd}
   {U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd}
 }
 # Mark all dcp files as not used in implementation to prevent them from being

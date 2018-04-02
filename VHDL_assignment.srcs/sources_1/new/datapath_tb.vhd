@@ -37,38 +37,47 @@ end datapath_tb;
 
 architecture Behavioral of datapath_tb is
     component datapath
-        Port (cw : in std_logic_vector(16 downto 0);
-            const : in std_logic_vector(15 downto 0); -- decoder
-            data_d_in : in std_logic_vector(15 downto 0); -- mux D
-            reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7 : out std_logic_vector(15 downto 0));
-
+         Port (cw : in std_logic_vector(16 downto 0);
+           const : in std_logic_vector(15 downto 0);
+           data_d_in : in std_logic_vector(15 downto 0);
+           Clk : in std_logic;
+           reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7 : out std_logic_vector(15 downto 0));
     end component;
     
     -- Inputs
     signal cw : std_logic_vector(16 downto 0);
     signal const, data_d_in : std_logic_vector(15 downto 0);
-    signal z_reg0, z_reg1, z_reg2, z_reg3, 
-           z_reg4, z_reg5, z_reg6, z_reg7 : std_logic_vector(15 downto 0);
+    signal reg0, reg1, reg2, reg3, 
+           reg4, reg5, reg6, reg7 : std_logic_vector(15 downto 0);
+    constant Clk_time : Time := 30ns;
+   signal Clk : std_logic := '0';
 
 begin
+    Clk <= not Clk after Clk_time / 2;
+    
+    uut: datapath port map (
+        cw => cw,
+        const => const,
+        data_d_in => data_d_in,
+        Clk => Clk,
+        reg0 => reg0,
+        reg1 => reg1, 
+        reg2 => reg2, 
+        reg3 => reg3, 
+        reg4 => reg4,
+        reg5 => reg5, 
+        reg6 => reg6, 
+        reg7 => reg7
+    );
+    
     stim_proc : process
     begin
-        z_reg0 <= "0000000000000000";
-        z_reg1 <= "1111111111111111";
-        z_reg2 <= "1010101010101010";
-        z_reg3 <= "0011001100110011";
-        z_reg4 <= "1100110011001100";
-        z_reg5 <= "1110001110001110";
-        z_reg6 <= "0000000000000001";
-        z_reg7 <= "0000000000000010";
+        data_d_in <= "1111111111111111";
+        
         
         wait for 30 ns;
-        cw <= "00000000000000011";
-        const <= x"FFFF";
-        data_d_in <= x"FFFF";
-        
-        wait for 30 ns;
-        cw <= "00000000010000001";
+        cw <= "00100000000000011";
+
         
         wait;
     end process;

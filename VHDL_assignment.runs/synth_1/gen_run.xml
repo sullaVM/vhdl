@@ -1,37 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1522138554">
+<GenRun Id="synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1522685477">
   <File Type="PA-TCL" Name="datapath.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="datapath_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="datapath_reports.tcl"/>
   <File Type="RDS-RDS" Name="datapath.vds"/>
   <File Type="RDS-UTIL" Name="datapath_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="datapath_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="datapath.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="datapath_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="datapath_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/imports/new/arithmetic_circuit_16bit.vhd">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/arithmetic_circuit_16bit.vhd"/>
-        <Attr Name="ImportTime" Val="1520606292"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/arithmetic_circuit_mux.vhd">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/arithmetic_circuit_mux.vhd"/>
-        <Attr Name="ImportTime" Val="1520608614"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/arithmetic_logic_unit.vhd">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/arithmetic_logic_unit.vhd"/>
-        <Attr Name="ImportTime" Val="1520789924"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/new/decoder_3to8.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/decoder_3to8.vhd"/>
@@ -40,54 +19,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/flags.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/full_adder.vhd">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/full_adder.vhd"/>
-        <Attr Name="ImportTime" Val="1519754104"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/function_unit.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/logic_unit_16bit.vhd">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/logic_unit_16bit.vhd"/>
-        <Attr Name="ImportTime" Val="1520787647"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/new/mux2_16bit.vhd">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/mux2_16bit.vhd"/>
         <Attr Name="ImportTime" Val="1520791627"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/mux3_1bit.vhd">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/mux3_1bit.vhd"/>
-        <Attr Name="ImportTime" Val="1520848299"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/new/mux4_16bit.vhd">
-      <FileInfo>
-        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/mux4_16bit.vhd"/>
-        <Attr Name="ImportTime" Val="1520614175"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -116,8 +51,92 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/datapath.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/arithmetic_circuit_16bit.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/arithmetic_circuit_16bit.vhd"/>
+        <Attr Name="ImportTime" Val="1520606292"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/arithmetic_circuit_mux.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/arithmetic_circuit_mux.vhd"/>
+        <Attr Name="ImportTime" Val="1520608614"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/arithmetic_logic_unit.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/arithmetic_logic_unit.vhd"/>
+        <Attr Name="ImportTime" Val="1520789924"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/flags.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/full_adder.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/full_adder.vhd"/>
+        <Attr Name="ImportTime" Val="1519754104"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/function_unit.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/logic_unit_16bit.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/logic_unit_16bit.vhd"/>
+        <Attr Name="ImportTime" Val="1520787647"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/mux3_1bit.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/mux3_1bit.vhd"/>
+        <Attr Name="ImportTime" Val="1520848299"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/new/mux4_16bit.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/mux4_16bit.vhd"/>
+        <Attr Name="ImportTime" Val="1520614175"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/new/ripple_carry_adder_16.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/ripple_carry_adder_16.vhd"/>
         <Attr Name="ImportTime" Val="1520605808"/>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -126,14 +145,9 @@
     </File>
     <File Path="$PSRCDIR/sources_1/imports/new/shifter_unit.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PSRCDIR/sources_1/new/shifter_unit.vhd"/>
         <Attr Name="ImportTime" Val="1520794233"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/datapath.vhd">
-      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -278,6 +292,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/control_memory.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="datapath"/>
@@ -290,7 +311,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

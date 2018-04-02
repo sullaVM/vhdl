@@ -89,19 +89,19 @@ stim_proc : process
         
         -- A
         rw <= '1';
+        d_data <= x"FA2E";
         mux_a_s <= "000";
         mux_b_s <= "000";
         decoder_s <= "001";
         data_src <= '1';
-        data <= x"FA2E";
         
         wait for 30 ns;
         rw <= '1';
+        d_data <= x"FA2E";
         mux_a_s <= "001";
         mux_b_s <= "010";
         decoder_s <= "010";
         data_src <= '1';
-        data <= x"FA2E";
    
         wait;
 end process;

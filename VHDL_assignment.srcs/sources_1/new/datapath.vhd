@@ -34,6 +34,7 @@ entity datapath is
     Port (cw : in std_logic_vector(16 downto 0);
         const : in std_logic_vector(15 downto 0);
         data_d_in : in std_logic_vector(15 downto 0);
+        Clk : in std_logic;
         reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7 : out std_logic_vector(15 downto 0));
 end datapath;
 
@@ -54,6 +55,7 @@ architecture Behavioral of datapath is
             h_sel : in std_logic_vector(1 downto 0);
             i_r, i_l : in std_logic;
             mf_sel : in std_logic;
+            Clk : in std_logic;
             ser_left, ser_right : out std_logic;
             z : out std_logic_vector(15 downto 0));
     end component;
@@ -70,10 +72,7 @@ architecture Behavioral of datapath is
     signal bus_a, bus_b : std_logic_vector(15 downto 0); 
     signal i_r, i_l, ser_left, ser_right : std_logic := '0';
     signal z : std_logic_vector(15 downto 0);
-    signal z_reg0, z_reg1, z_reg2, z_reg3, 
-        z_reg4, z_reg5, z_reg6, z_reg7 : std_logic_vector(15 downto 0);
 
-    signal Clk : std_logic := '0';
     constant Clk_time : time := 30ns;
 
 begin
@@ -88,14 +87,14 @@ begin
             data => const,
             bus_a => bus_a,
             bus_b => bus_b,
-            reg0 => z_reg0, 
-            reg1 => z_reg1, 
-            reg2 => z_reg2, 
-            reg3 => z_reg3, 
-            reg4 => z_reg4, 
-            reg5 => z_reg5, 
-            reg6 => z_reg6, 
-            reg7 => z_reg7
+            reg0 => reg0, 
+            reg1 => reg1, 
+            reg2 => reg2, 
+            reg3 => reg3, 
+            reg4 => reg4, 
+            reg5 => reg5, 
+            reg6 => reg6, 
+            reg7 => reg7
         );
         
         fu: function_unit port map (
@@ -105,6 +104,7 @@ begin
             h_sel => cw(5 downto 4),
             i_r => i_r,
             i_l => i_l,
+            Clk => Clk,
             mf_sel => cw(6),
             ser_left => ser_left,
             ser_right => ser_right,
@@ -112,10 +112,10 @@ begin
         );
         
         mux_d : mux2_16bit PORT MAP (
-            In0 => data_d_in,
-            In1 => z,
+            In0 => z,
+            In1 => data_d_in,
             s => cw(1),
             Z => d_data
         );
-
+        
 end Behavioral;
