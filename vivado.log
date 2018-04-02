@@ -2564,3 +2564,80 @@ source reg_file_tb.tcl
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'reg_file_tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
 launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1587.469 ; gain = 0.000
+set_property top datapath_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'datapath_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj datapath_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "U:/Computer Arch/VHDL_assignment/VHDL_assignment.srcs/sources_1/new/datapath.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity datapath
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 76db21506b28405ebb8242dda7692d00 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot datapath_tb_behav xil_defaultlib.datapath_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.reg [reg_default]
+Compiling architecture behavioral of entity xil_defaultlib.decoder_3to8 [decoder_3to8_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux8_16bit [mux8_16bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux2_16bit [mux2_16bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.reg_file [reg_file_default]
+Compiling architecture behavioral of entity xil_defaultlib.arithmetic_circuit_mux [arithmetic_circuit_mux_default]
+Compiling architecture behavioral of entity xil_defaultlib.full_adder [full_adder_default]
+Compiling architecture behavioral of entity xil_defaultlib.ripple_carry_adder_16 [ripple_carry_adder_16_default]
+Compiling architecture behavioral of entity xil_defaultlib.arithmetic_circuit_16bit [arithmetic_circuit_16bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux4_16bit [mux4_16bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.logic_unit_16bit [logic_unit_16bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.arithmetic_logic_unit [arithmetic_logic_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux3_1bit [mux3_1bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.shifter_unit [shifter_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.flags [flags_default]
+Compiling architecture behavioral of entity xil_defaultlib.function_unit [function_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.datapath [datapath_default]
+Compiling architecture behavioral of entity xil_defaultlib.datapath_tb
+Built simulation snapshot datapath_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'U:/Computer Arch/VHDL_assignment/VHDL_assignment.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "datapath_tb_behav -key {Behavioral:sim_1:Functional:datapath_tb} -tclbatch {datapath_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source datapath_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'datapath_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1587.469 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  2 18:50:22 2018...

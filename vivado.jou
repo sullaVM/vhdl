@@ -101,3 +101,9 @@ source reg_file_tb.tcl
 close_sim
 launch_simulation
 source reg_file_tb.tcl
+set_property top datapath_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+source datapath_tb.tcl
+close_sim
+close_sim
