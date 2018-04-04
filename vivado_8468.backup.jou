@@ -1,0 +1,109 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Apr  2 15:26:51 2018
+# Process ID: 8468
+# Current directory: U:/Computer Arch/VHDL_assignment
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11160 U:\Computer Arch\VHDL_assignment\VHDL_assignment.xpr
+# Log file: U:/Computer Arch/VHDL_assignment/vivado.log
+# Journal file: U:/Computer Arch/VHDL_assignment\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {U:/Computer Arch/VHDL_assignment/VHDL_assignment.xpr}
+update_compile_order -fileset sources_1
+set_property top datapath_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+source datapath_tb.tcl
+close_sim
+launch_simulation
+source datapath_tb.tcl
+close_sim
+launch_simulation
+source datapath_tb.tcl
+close_sim
+synth_design -rtl -name rtl_1
+close_design
+launch_simulation
+source datapath_tb.tcl
+close_sim
+set_property top function_unit_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+source function_unit_tb.tcl
+close_sim
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+update_compile_order -fileset sources_1
+launch_simulation
+source function_unit_tb.tcl
+close_sim
+set_property top datapath_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+launch_simulation
+launch_simulation
+source datapath_tb.tcl
+close_sim
+launch_simulation
+source datapath_tb.tcl
+close_sim
+launch_simulation
+source datapath_tb.tcl
+synth_design -rtl -name rtl_1
+close_sim
+launch_simulation
+source datapath_tb.tcl
+refresh_design
+close_sim
+launch_simulation
+source datapath_tb.tcl
+close_sim
+launch_simulation
+source datapath_tb.tcl
+close_sim
+launch_simulation
+source datapath_tb.tcl
+set_property top function_unit_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+source function_unit_tb.tcl
+close_sim
+close_sim
+refresh_design
+set_property top datapath_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+source datapath_tb.tcl
+close_sim
+refresh_design
+set_property top reg_file_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+source reg_file_tb.tcl
+close_sim
+launch_simulation
+source reg_file_tb.tcl
+close_sim
+launch_simulation
+source reg_file_tb.tcl
+refresh_design
+close_sim
+launch_simulation
+source reg_file_tb.tcl
+close_sim
+launch_simulation
+source reg_file_tb.tcl
+close_sim
+launch_simulation
+source reg_file_tb.tcl
+set_property top datapath_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+source datapath_tb.tcl
+close_sim
+close_sim

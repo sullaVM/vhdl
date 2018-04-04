@@ -36,12 +36,13 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity reg_file is
   Port (mux_a_s, mux_b_s, decoder_s : in std_logic_vector(2 downto 0);
+        td, tb : in std_logic;
         Clk : in std_logic;
         rw, data_src : in std_logic;
         d_data : in std_logic_vector(15 downto 0);
         data : in std_logic_vector(15 downto 0);
         bus_a, bus_b : out std_logic_vector(15 downto 0);
-        reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7 : out std_logic_vector(15 downto 0));
+        reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8 : out std_logic_vector(15 downto 0));
 end reg_file;
 
 architecture Behavioral of reg_file is
@@ -90,7 +91,8 @@ signal load_reg0, load_reg1, load_reg2, load_reg3,
 signal dec_out_0, dec_out_1, dec_out_2, dec_out_3, dec_out_4,
         dec_out_5, dec_out_6, dec_out_7, dec_out_8 : std_logic := '0';
 signal reg0_q, reg1_q, reg2_q, reg3_q, reg4_q, reg5_q, reg6_q, reg7_q,reg8_q,
-        data_src_mux_out, src_reg, a_select_z, b_select_z : std_logic_vector(15 downto 0);
+        data_src_mux_out, src_reg, a_select_z, b_select_z,
+        b_reg_final : std_logic_vector(15 downto 0);
     
 begin
 -- port maps
@@ -151,11 +153,11 @@ begin
         Q => reg7_q);
         
     -- reg 8
---    reg08: reg PORT MAP (
---        D => d_data,
---        load => load_reg8,
---        Clk => Clk,
---        Q => reg8);
+    reg08: reg PORT MAP (
+        D => d_data,
+        load => load_reg8,
+        Clk => Clk,
+        Q => reg8_q);
 
     -- destination register decoder
     des_decoder_2to8: decoder_3to8 PORT MAP (
@@ -205,12 +207,26 @@ begin
         In6 => reg6_q,
         In7 => reg7_q,
         s => mux_a_s,
+        Z => a_select_z
+    );
+    
+    b_sel_mux_2 : mux2_16bit PORT MAP (
+        In0 => b_select_z,
+        In1 => reg8_q,
+        s => td,
+        Z => b_reg_final
+    );
+    
+    a_sel_mux_2 : mux2_16bit PORT MAP (
+        In0 => a_select_z,
+        In1 => reg8_q,
+        s => tb,
         Z => bus_a
     );
     
     -- 2 to 1 multiplexer
     mux_B : mux2_16bit PORT MAP (
-        In0 => b_select_z,
+        In0 => b_reg_final,
         In1 => data,
         s => data_src,
         Z => bus_b
