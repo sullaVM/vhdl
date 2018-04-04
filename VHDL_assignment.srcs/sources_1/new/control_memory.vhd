@@ -53,7 +53,7 @@ entity control_memory is
 end control_memory;
 
 architecture Behavioral of control_memory is
-type mem_array is array(0 to 255) of std_logic_vector(27 downto 0);
+type mem_array is array(0 to 255) of std_logic_vector(15 downto 0);
 
 begin
 memory_m : process (IN_CAR)

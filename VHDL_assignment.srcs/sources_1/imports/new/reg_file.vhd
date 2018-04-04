@@ -35,7 +35,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 --use UNISIM.VComponents.all;
 
 entity reg_file is
-  Port (mux_a_s, mux_b_s, decoder_s : in std_logic_vector(2 downto 0);
+  Port (sa, sb, dr : in std_logic_vector(2 downto 0);
         td, tb : in std_logic;
         Clk : in std_logic;
         rw, data_src : in std_logic;
@@ -161,9 +161,9 @@ begin
 
     -- destination register decoder
     des_decoder_2to8: decoder_3to8 PORT MAP (
-        A0 => decoder_s(0),
-        A1 => decoder_s(1), 
-        A2 => decoder_s(2),
+        A0 => dr(0),
+        A1 => dr(1), 
+        A2 => dr(2),
         Q0 => dec_out_0, 
         Q1 => dec_out_1, 
         Q2 => dec_out_2, 
@@ -174,14 +174,15 @@ begin
         Q7 => dec_out_7 
      );
      
-     load_reg0 <= dec_out_0 and rw;
-     load_reg1 <= dec_out_1 and rw;
-     load_reg2 <= dec_out_2 and rw;
-     load_reg3 <= dec_out_3 and rw;
-     load_reg4 <= dec_out_4 and rw;
-     load_reg5 <= dec_out_5 and rw;
-     load_reg6 <= dec_out_6 and rw;
-     load_reg7 <= dec_out_7 and rw;
+     load_reg0 <= dec_out_0 and rw and not td;
+     load_reg1 <= dec_out_1 and rw and not td;
+     load_reg2 <= dec_out_2 and rw and not td;
+     load_reg3 <= dec_out_3 and rw and not td;
+     load_reg4 <= dec_out_4 and rw and not td;
+     load_reg5 <= dec_out_5 and rw and not td;
+     load_reg6 <= dec_out_6 and rw and not td;
+     load_reg7 <= dec_out_7 and rw and not td;
+     load_reg8 <= td and rw;
 
     -- 8 to 1 source register multiplexer
     b_select_mux : mux8_16bit PORT MAP (
@@ -193,7 +194,7 @@ begin
         In5 => reg5_q,
         In6 => reg6_q,
         In7 => reg7_q,
-        s => mux_b_s,
+        s => sb,
         Z => b_select_z
     );
     
@@ -206,7 +207,7 @@ begin
         In5 => reg5_q,
         In6 => reg6_q,
         In7 => reg7_q,
-        s => mux_a_s,
+        s => sa,
         Z => a_select_z
     );
     

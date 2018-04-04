@@ -34,19 +34,24 @@ entity datapath is
     Port (cw : in std_logic_vector(16 downto 0);
         const : in std_logic_vector(15 downto 0);
         data_d_in : in std_logic_vector(15 downto 0);
+        pc : in std_logic_vector(15 downto 0);
+        rw, mw : in std_logic;
+        td, tb : in std_logic;
+        dr, sa, sb : in std_logic_vector(2 downto 0);
         Clk : in std_logic;
-        reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7 : out std_logic_vector(15 downto 0));
+        reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8 : out std_logic_vector(15 downto 0));
 end datapath;
 
 architecture Behavioral of datapath is
     component reg_file
-         Port (mux_a_s, mux_b_s, decoder_s : in std_logic_vector(2 downto 0);
+        Port (sa, sb, dr : in std_logic_vector(2 downto 0);
+          td, tb : in std_logic;
           Clk : in std_logic;
           rw, data_src : in std_logic;
           d_data : in std_logic_vector(15 downto 0);
           data : in std_logic_vector(15 downto 0);
           bus_a, bus_b : out std_logic_vector(15 downto 0);
-          reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7 : out std_logic_vector(15 downto 0));
+          reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8 : out std_logic_vector(15 downto 0));
     end component;
 
     component function_unit
@@ -77,11 +82,13 @@ architecture Behavioral of datapath is
 
 begin
        register_file: reg_file PORT MAP (
-            mux_a_s => cw(13 downto 11),
-            mux_b_s => cw(10 downto 8),
-            decoder_s => cw(16 downto 14),
+            sa => sa,
+            sb => sb,
+            dr => dr,
+            td => td,
+            tb => tb,
             Clk => Clk,
-            rw => cw(0),
+            rw => rw,
             data_src => cw(7),
             d_data => d_data,
             data => const,
@@ -94,7 +101,8 @@ begin
             reg4 => reg4, 
             reg5 => reg5, 
             reg6 => reg6, 
-            reg7 => reg7
+            reg7 => reg7,
+            reg8 => reg8
         );
         
         fu: function_unit port map (
