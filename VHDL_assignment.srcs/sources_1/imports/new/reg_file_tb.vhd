@@ -40,9 +40,8 @@ COMPONENT reg_file
   Port (sa, sb, dr : in std_logic_vector(2 downto 0);
       td, tb : in std_logic;
       Clk : in std_logic;
-      rw, data_src : in std_logic;
+      rw : in std_logic;
       d_data : in std_logic_vector(15 downto 0);
-      data : in std_logic_vector(15 downto 0);
       bus_a, bus_b : out std_logic_vector(15 downto 0);
       reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8 : out std_logic_vector(15 downto 0));
 END COMPONENT;
@@ -70,9 +69,7 @@ begin
         dr => dr,
         Clk => Clk,
         rw => rw,
-        data_src => data_src,
         d_data => d_data,
-        data => data,
         bus_a => bus_a,
         bus_b => bus_b,
         reg0 => z_reg0, 

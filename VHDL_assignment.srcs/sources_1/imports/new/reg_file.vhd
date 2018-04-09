@@ -38,9 +38,8 @@ entity reg_file is
   Port (sa, sb, dr : in std_logic_vector(2 downto 0);
         td, tb : in std_logic;
         Clk : in std_logic;
-        rw, data_src : in std_logic;
+        rw : in std_logic;
         d_data : in std_logic_vector(15 downto 0);
-        data : in std_logic_vector(15 downto 0);
         bus_a, bus_b : out std_logic_vector(15 downto 0);
         reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8 : out std_logic_vector(15 downto 0));
 end reg_file;
@@ -215,7 +214,7 @@ begin
         In0 => b_select_z,
         In1 => reg8_q,
         s => td,
-        Z => b_reg_final
+        Z => bus_b
     );
     
     a_sel_mux_2 : mux2_16bit PORT MAP (
@@ -223,14 +222,6 @@ begin
         In1 => reg8_q,
         s => tb,
         Z => bus_a
-    );
-    
-    -- 2 to 1 multiplexer
-    mux_B : mux2_16bit PORT MAP (
-        In0 => b_reg_final,
-        In1 => data,
-        s => data_src,
-        Z => bus_b
     );
     
     reg0 <= reg0_q;
