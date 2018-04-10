@@ -1,0 +1,10 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../VHDL_assignment.srcs/sources_1/imports/new/full_adder.vhd" \
+"../../../../VHDL_assignment.srcs/sources_1/new/pc.vhd" \
+"../../../../VHDL_assignment.srcs/sources_1/imports/new/reg.vhd" \
+"../../../../VHDL_assignment.srcs/sources_1/imports/new/ripple_carry_adder_16.vhd" \
+"../../../../VHDL_assignment.srcs/sources_1/new/pc_tb.vhd" \
+
+# Do not sort compile order
+nosort
