@@ -37,6 +37,7 @@ entity datapath is
         rw : in std_logic;
         td, tb, mb, md : in std_logic;
         dr, sa, sb : in std_logic_vector(2 downto 0);
+        v_flag, c_flag, n_flag, z_flag : out std_logic;
         Clk : in std_logic;
         reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8 : out std_logic_vector(15 downto 0));
 end datapath;
@@ -60,6 +61,7 @@ architecture Behavioral of datapath is
             mf_sel : in std_logic;
             Clk : in std_logic;
             ser_left, ser_right : out std_logic;
+            v, c, n, z_flag : out std_logic;
             z : out std_logic_vector(15 downto 0));
     end component;
     
@@ -113,6 +115,10 @@ begin
             mf_sel => fs(4),
             ser_left => ser_left,
             ser_right => ser_right,
+            v => v_flag,
+            c => c_flag,
+            n => n_flag,
+            z_flag => z_flag,
             z => z
         );
         

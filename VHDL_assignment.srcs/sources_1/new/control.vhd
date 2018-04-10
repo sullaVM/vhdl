@@ -52,6 +52,7 @@ architecture Behavioral of control is
         Port (address : in unsigned(15 downto 0);
             write_data : in std_logic_vector(15 downto 0);
             MemWrite, MemRead : in std_logic;
+            Clk : in std_logic;
             read_data : out std_logic_vector(15 downto 0));
     end component;
     
@@ -74,13 +75,42 @@ architecture Behavioral of control is
             IN_CAR : in std_logic_vector(7 downto 0));
     end component;
     
+    component mux8_1bit
+      Port (In0, In1, In2, In3, In4, In5, In6, In7 : in std_logic;
+          s : in std_logic_vector(2 downto 0);
+          Z : out std_logic);
+    end component;
+    
+    component reg
+      Port (D : in std_logic_vector(15 downto 0);
+          load, Clk : in std_logic;
+          Q : out std_logic_vector(15 downto 0));
+    end component;
+    
     -- Signals
+    -- datapath
     signal const, data_d_in : std_logic_vector(15 downto 0);
     signal reg0, reg1, reg2, reg3, 
            reg4, reg5, reg6, reg7 : std_logic_vector(15 downto 0);
     signal rw, td, tb, mb, md : std_logic;
     signal fs : std_logic_vector(4 downto 0);
     signal dr, sa, sb : std_logic_vector(2 downto 0);
+    
+    -- memory
+    signal address : unsigned(15 downto 0);
+    signal write_data, read_data : std_logic_vector(15 downto 0);
+    signal memwrite, memread : std_logic;
+    
+    -- control memory
+    signal mw, mm, ta, pl,
+        pi, il, mc : std_logic;
+    signal ms : std_logic_vector(2 downto 0);
+    signal na : std_logic_vector(7 downto 0);
+    signal in_car : std_logic_vector(7 downto 0);
+        
+    -- reg
+    signal D : std_logic_vector(15 downto 0); -- data from Memory
+    signal ir_q : std_logic_vector(15 downto 0);
     
     constant Clk_time : Time := 30ns;
     signal Clk : std_logic := '0';
@@ -110,5 +140,41 @@ begin
         reg6 => reg6, 
         reg7 => reg7
     );
-
+    
+    mem : memory port map (
+        address => address,
+        write_data => write_data,
+        MemWrite => MemWrite,
+        MemRead => MemRead,
+        Clk => Clk,
+        read_data => read_data
+    );
+    
+    ir: reg port map (
+        D => read_data,
+        load => il,
+        Clk => Clk,
+        Q => ir_q
+    );
+    
+    con_mem : control_memory port map (
+        MW => mw,
+        MM => mm,
+        RW => rw,
+        MD => md,
+        FS => fs,
+        MB => mb,
+        TB => tb,
+        TA => ta,
+        TD => td,
+        PL => pl,
+        PI => pi,
+        IL => il,
+        MC => mc,
+        MS => ms,
+        NA => na,
+        IN_CAR => in_car
+    );
+        
+        
 end Behavioral;

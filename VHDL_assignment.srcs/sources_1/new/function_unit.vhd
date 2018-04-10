@@ -77,7 +77,7 @@ architecture Behavioral of function_unit is
     
     -- Signals
     signal z_alu, z_shf : std_logic_vector(15 downto 0);
-    signal cin, cout : std_logic;
+    signal cout : std_logic;
     signal i_right, i_left : std_logic := '0';
     signal f_out : std_logic_vector(15 downto 0);
     
@@ -112,7 +112,7 @@ begin
     
     fl : flags PORT MAP (
         res => z_alu,
-        cin => cin,
+        cin => g_sel(0),
         cout => cout,
         z => z_flag,
         v => v,

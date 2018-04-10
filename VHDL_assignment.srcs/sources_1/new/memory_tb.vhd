@@ -41,24 +41,29 @@ architecture Behavioral of memory_tb is
         Port (address : in unsigned(15 downto 0);
             write_data : in std_logic_vector(15 downto 0);
             MemWrite, MemRead : in std_logic;
+            Clk : in std_logic;
             read_data : out std_logic_vector(15 downto 0));
     end component;
     
     -- Inputs
     signal address : unsigned(15 downto 0);
     signal write_data : std_logic_vector(15 downto 0);
+    constant Clk_time : Time := 10ns;
+    signal Clk : std_logic := '0';
     
     -- Outputs
     signal MemWrite, MemRead : std_logic;
     signal read_data : std_logic_vector(15 downto 0);
     
 begin
+    Clk <= not Clk after Clk_time / 2;
 
     mem : memory port map (
         address => address,
         write_data => write_data,
         MemWrite => MemWrite,
         MemRead => MemRead,
+        Clk => Clk,
         read_data => read_data
     );
     

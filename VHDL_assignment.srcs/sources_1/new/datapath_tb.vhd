@@ -43,6 +43,7 @@ architecture Behavioral of datapath_tb is
             rw : in std_logic;
             td, tb, mb, md : in std_logic;
             dr, sa, sb : in std_logic_vector(2 downto 0);
+            v_flag, c_flag, n_flag, z_flag : out std_logic;
             Clk : in std_logic;
             reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8 : out std_logic_vector(15 downto 0));
     end component;
@@ -54,6 +55,7 @@ architecture Behavioral of datapath_tb is
     signal rw, td, tb, mb, md : std_logic;
     signal fs : std_logic_vector(4 downto 0);
     signal dr, sa, sb : std_logic_vector(2 downto 0);
+    signal v_flag, c_flag, n_flag, z_flag : std_logic;
     constant Clk_time : Time := 30ns;
     signal Clk : std_logic := '0';
 
@@ -72,6 +74,10 @@ begin
         dr => dr,
         sa => sa,
         sb => sb,
+        v_flag => v_flag,
+        c_flag => c_flag,
+        n_flag => n_flag,
+        z_flag => z_flag,
         Clk => Clk,
         reg0 => reg0,
         reg1 => reg1, 
@@ -85,11 +91,55 @@ begin
     
     stim_proc : process
     begin
-        data_d_in <= "1111111111111111";
-        
+    
+        -- load X"FFFF" to reg00
+        data_d_in <= X"FFFF";
+        rw <= '1';
+        dr <= "000";
+        td <= '0';
+        md <= '1';
         
         wait for 30 ns;
-
+        
+        -- load X"1111" to reg01
+        data_d_in <= X"1111";
+        rw <= '1';
+        dr <= "001";
+        td <= '0';
+        md <= '1';
+        
+        wait for 30 ns;
+        
+        -- load X"2222" to reg02
+        data_d_in <= X"2222";
+        rw <= '1';
+        dr <= "010";
+        td <= '0';
+        md <= '1';
+        
+        wait for 30 ns;
+        
+        -- load X"3333" to reg03
+        data_d_in <= X"3333";
+        rw <= '1';
+        dr <= "011";
+        td <= '0';
+        md <= '1';
+        
+        wait for 30 ns;
+        
+        -- reg00 + reg01 = reg04 X"11110"
+        fs <= "00010";
+        rw <= '1';
+        dr <= "100";
+        sa <= "000";
+        sb <= "001";
+        mb <= '0';
+        tb <= '0';
+        td <= '0';
+        md <= '0';
+        
+        wait for 30 ns;
         
         wait;
     end process;
