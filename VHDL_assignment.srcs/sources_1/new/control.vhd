@@ -38,20 +38,22 @@ end control;
 
 architecture Behavioral of control is
     component datapath
-    Port (const : in std_logic_vector(15 downto 0);
-        data_d_in : in std_logic_vector(15 downto 0);
-        fs : in std_logic_vector(4 downto 0);
-        rw : in std_logic;
-        td, tb, mb, md : in std_logic;
-        dr, sa, sb : in std_logic_vector(2 downto 0);
-        Clk : in std_logic;
-        reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8 : out std_logic_vector(15 downto 0));
+        Port (const : in std_logic_vector(15 downto 0);
+            data_d_in : in std_logic_vector(15 downto 0);
+            fs : in std_logic_vector(4 downto 0);
+            rw : in std_logic;
+            td, tb, ta, mb, md : in std_logic;
+            dr, sa, sb : in std_logic_vector(2 downto 0);
+            v_flag, c_flag, n_flag, z_flag : out std_logic;
+            bus_a, bus_b : out std_logic_vector(15 downto 0);
+            Clk : in std_logic;
+            reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8 : out std_logic_vector(15 downto 0));
     end component;
     
     component memory 
         Port (address : in unsigned(15 downto 0);
             write_data : in std_logic_vector(15 downto 0);
-            MemWrite, MemRead : in std_logic;
+            MemWrite : in std_logic;
             Clk : in std_logic;
             read_data : out std_logic_vector(15 downto 0));
     end component;
@@ -86,6 +88,18 @@ architecture Behavioral of control is
           load, Clk : in std_logic;
           Q : out std_logic_vector(15 downto 0));
     end component;
+   
+   component mux2_16bit
+     Port (In0 : in std_logic_vector(15 downto 0);
+         In1 : in std_logic_vector(15 downto 0);
+         s : in std_logic;
+         Z : out std_logic_vector(15 downto 0));
+   end component;
+   
+   component zero_fill
+       Port (x : in std_logic_vector(2 downto 0);
+         y : out std_logic_vector(15 downto 0));
+   end component;
     
     -- Signals
     -- datapath
@@ -93,13 +107,16 @@ architecture Behavioral of control is
     signal reg0, reg1, reg2, reg3, 
            reg4, reg5, reg6, reg7 : std_logic_vector(15 downto 0);
     signal rw, td, tb, mb, md : std_logic;
+    signal v_flag, c_flag, n_flag, z_flag : std_logic;
+    signal not_z_flag, not_c_flag : std_logic;
+    signal bus_a, bus_b : std_logic_vector(15 downto 0);
     signal fs : std_logic_vector(4 downto 0);
     signal dr, sa, sb : std_logic_vector(2 downto 0);
     
     -- memory
     signal address : unsigned(15 downto 0);
     signal write_data, read_data : std_logic_vector(15 downto 0);
-    signal memwrite, memread : std_logic;
+    signal mem_address : unsigned(15 downto 0);
     
     -- control memory
     signal mw, mm, ta, pl,
@@ -111,6 +128,17 @@ architecture Behavioral of control is
     -- reg
     signal D : std_logic_vector(15 downto 0); -- data from Memory
     signal ir_q : std_logic_vector(15 downto 0);
+    
+    -- mux_b
+    
+    -- mux_s
+    signal mux_s_z : std_logic;
+    
+    -- mux_m
+    signal mux_m_z : std_logic_vector(15 downto 0);
+    
+    -- pc
+    signal pc : std_logic_vector(15 downto 0);
     
     constant Clk_time : Time := 30ns;
     signal Clk : std_logic := '0';
@@ -125,11 +153,18 @@ begin
         rw => rw,
         td => td,
         tb => tb,
+        ta => ta,
         mb => mb,
         md => md,
-        dr => dr,
-        sa => sa,
-        sb => sb,
+        dr => ir_q(8 downto 6),
+        sa => ir_q(5 downto 3),
+        sb => ir_q(2 downto 0),
+        v_flag => v_flag,
+        c_flag => c_flag,
+        n_flag => n_flag,
+        z_flag => z_flag,
+        bus_a => bus_a,
+        bus_b => bus_b,
         Clk => Clk,
         reg0 => reg0,
         reg1 => reg1, 
@@ -142,10 +177,9 @@ begin
     );
     
     mem : memory port map (
-        address => address,
-        write_data => write_data,
-        MemWrite => MemWrite,
-        MemRead => MemRead,
+        address => mem_address,
+        write_data => bus_b,
+        MemWrite => mw,
         Clk => Clk,
         read_data => read_data
     );
@@ -155,6 +189,11 @@ begin
         load => il,
         Clk => Clk,
         Q => ir_q
+    );
+    
+    zf : zero_fill port map (
+        x => ir_q(2 downto 0),
+        y => const
     );
     
     con_mem : control_memory port map (
@@ -175,6 +214,31 @@ begin
         NA => na,
         IN_CAR => in_car
     );
+    
+    not_z_flag <= not z_flag;
+    not_c_flag <= not c_flag;
+          
+    mux_s : mux8_1bit port map (
+        In0 => '0',
+        In1 => '1', 
+        In2 => c_flag, 
+        In3 => v_flag, 
+        In4 => z_flag, 
+        In5 => n_flag, 
+        In6 => not_c_flag, 
+        In7 => not_z_flag,
+        s => ms,
+        Z => mux_s_z
+    );
+          
+    mux_m : mux2_16bit port map (
+        In0 => bus_a,
+        In1 => pc,
+        s => mm,
+        Z => mux_m_z
+    );
+    
+    mem_address <= unsigned(mux_m_z);
         
         
 end Behavioral;

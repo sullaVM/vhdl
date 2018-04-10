@@ -36,7 +36,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity reg_file is
   Port (sa, sb, dr : in std_logic_vector(2 downto 0);
-        td, tb : in std_logic;
+        td, tb, ta : in std_logic;
         Clk : in std_logic;
         rw : in std_logic;
         d_data : in std_logic_vector(15 downto 0);
@@ -213,14 +213,14 @@ begin
     b_sel_mux_2 : mux2_16bit PORT MAP (
         In0 => b_select_z,
         In1 => reg8_q,
-        s => td,
+        s => tb,
         Z => bus_b
     );
     
     a_sel_mux_2 : mux2_16bit PORT MAP (
         In0 => a_select_z,
         In1 => reg8_q,
-        s => tb,
+        s => ta,
         Z => bus_a
     );
     

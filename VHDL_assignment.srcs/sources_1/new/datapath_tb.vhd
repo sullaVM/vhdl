@@ -37,25 +37,27 @@ end datapath_tb;
 
 architecture Behavioral of datapath_tb is
     component datapath
-        Port (const : in std_logic_vector(15 downto 0);
-            data_d_in : in std_logic_vector(15 downto 0);
-            fs : in std_logic_vector(4 downto 0);
-            rw : in std_logic;
-            td, tb, mb, md : in std_logic;
-            dr, sa, sb : in std_logic_vector(2 downto 0);
-            v_flag, c_flag, n_flag, z_flag : out std_logic;
-            Clk : in std_logic;
-            reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8 : out std_logic_vector(15 downto 0));
+    Port (const : in std_logic_vector(15 downto 0);
+        data_d_in : in std_logic_vector(15 downto 0);
+        fs : in std_logic_vector(4 downto 0);
+        rw : in std_logic;
+        td, tb, ta, mb, md : in std_logic;
+        dr, sa, sb : in std_logic_vector(2 downto 0);
+        v_flag, c_flag, n_flag, z_flag : out std_logic;
+        bus_a, bus_b : out std_logic_vector(15 downto 0);
+        Clk : in std_logic;
+        reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8 : out std_logic_vector(15 downto 0));
     end component;
     
     -- Inputs
     signal const, data_d_in : std_logic_vector(15 downto 0);
     signal reg0, reg1, reg2, reg3, 
-           reg4, reg5, reg6, reg7 : std_logic_vector(15 downto 0);
-    signal rw, td, tb, mb, md : std_logic;
+           reg4, reg5, reg6, reg7,
+           bus_a, bus_b : std_logic_vector(15 downto 0);
+    signal rw, td, tb, ta, mb, md : std_logic;
     signal fs : std_logic_vector(4 downto 0);
     signal dr, sa, sb : std_logic_vector(2 downto 0);
-    signal v_flag, c_flag, n_flag, z_flag : std_logic;
+    signal v_flag, c_flag, n_flag, z_flag : std_logic := '0';
     constant Clk_time : Time := 30ns;
     signal Clk : std_logic := '0';
 
@@ -69,11 +71,14 @@ begin
         rw => rw,
         td => td,
         tb => tb,
+        ta => ta,
         mb => mb,
         md => md,
         dr => dr,
         sa => sa,
         sb => sb,
+        bus_a => bus_a,
+        bus_b => bus_b,
         v_flag => v_flag,
         c_flag => c_flag,
         n_flag => n_flag,

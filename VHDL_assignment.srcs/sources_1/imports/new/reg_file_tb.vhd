@@ -38,7 +38,7 @@ architecture Behavioral of reg_file_tb is
 -- Component Declaration for the Unit Under Test (UUT)
 COMPONENT reg_file
   Port (sa, sb, dr : in std_logic_vector(2 downto 0);
-      td, tb : in std_logic;
+      td, tb, ta : in std_logic;
       Clk : in std_logic;
       rw : in std_logic;
       d_data : in std_logic_vector(15 downto 0);
@@ -48,7 +48,7 @@ END COMPONENT;
 
 -- Inputs
 signal sa, sb, dr : std_logic_vector(2 downto 0);
-signal rw, data_src, tb, td : std_logic;
+signal rw, data_src, tb, td, ta : std_logic;
 signal d_data, data : std_logic_vector(15 downto 0);
 signal Clk : std_logic := '0';
 constant Clk_time : time := 30ns;
@@ -66,6 +66,7 @@ begin
         sb => sb,
         tb => tb,
         td => td,
+        ta => ta,
         dr => dr,
         Clk => Clk,
         rw => rw,
@@ -93,6 +94,7 @@ stim_proc : process
         sa <= "000";
         sb <= "000";
         dr <= "001";
+        ta <= '0';
         td <= '1';
         tb <= '0';
         data_src <= '1';
@@ -103,6 +105,7 @@ stim_proc : process
         sa <= "001";
         sb <= "010";
         dr <= "010";
+        ta <= '0';
         td <= '0';
         tb <= '0';
         data_src <= '1';

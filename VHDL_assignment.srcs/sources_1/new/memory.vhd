@@ -35,7 +35,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 entity memory is -- use unsigned for memory address
     Port (address : in unsigned(15 downto 0);
         write_data : in std_logic_vector(15 downto 0);
-        MemWrite, MemRead : in std_logic;
+        MemWrite : in std_logic;
         Clk : in std_logic;
         read_data : out std_logic_vector(15 downto 0));
 end memory;
@@ -218,7 +218,7 @@ architecture Behavioral of memory is
             if (rising_edge(Clk)) then 
                 if MemWrite ='1' then
                     data_mem(addr):= write_data;
-                elsif MemRead='1' then
+                else
                     read_data <= data_mem(addr) after 10 ns;
                 end if;
             end if;

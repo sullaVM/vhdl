@@ -35,17 +35,18 @@ entity datapath is
         data_d_in : in std_logic_vector(15 downto 0);
         fs : in std_logic_vector(4 downto 0);
         rw : in std_logic;
-        td, tb, mb, md : in std_logic;
+        td, tb, ta, mb, md : in std_logic;
         dr, sa, sb : in std_logic_vector(2 downto 0);
         v_flag, c_flag, n_flag, z_flag : out std_logic;
+        bus_a, bus_b : out std_logic_vector(15 downto 0);
         Clk : in std_logic;
         reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7, reg8 : out std_logic_vector(15 downto 0));
-end datapath;
+    end datapath;
 
 architecture Behavioral of datapath is
     component reg_file
         Port (sa, sb, dr : in std_logic_vector(2 downto 0);
-          td, tb : in std_logic;
+          td, tb, ta : in std_logic;
           Clk : in std_logic;
           rw : in std_logic;
           d_data : in std_logic_vector(15 downto 0);
@@ -73,10 +74,11 @@ architecture Behavioral of datapath is
     end component;
    
    -- Signals   
+--    signal reg0, reg1, reg2, reg3, reg4,
+--        reg5, reg6, reg7, reg8 : std_logic_vector(15 downto 0);    
     signal d_data, data : std_logic_vector(15 downto 0);
-    signal bus_a, bus_b : std_logic_vector(15 downto 0); 
+    signal bus_a_z, bus_b_z, bus_b_mux : std_logic_vector(15 downto 0); 
     signal i_r, i_l, ser_left, ser_right : std_logic := '0';
-    signal bus_b_mux :  std_logic_vector(15 downto 0);
     signal z : std_logic_vector(15 downto 0);
 
     constant Clk_time : time := 30ns;
@@ -88,11 +90,12 @@ begin
             dr => dr,
             td => td,
             tb => tb,
+            ta => ta,
             Clk => Clk,
             rw => rw,
             d_data => d_data,
-            bus_a => bus_a,
-            bus_b => bus_b,
+            bus_a => bus_a_z,
+            bus_b => bus_b_z,
             reg0 => reg0, 
             reg1 => reg1, 
             reg2 => reg2, 
@@ -105,7 +108,7 @@ begin
         );
         
         fu: function_unit port map (
-            a => bus_a,
+            a => bus_a_z,
             b => bus_b_mux,
             g_sel => fs(3 downto 0),
             h_sel => fs(3 downto 2),
@@ -123,7 +126,7 @@ begin
         );
         
         mux_b : mux2_16bit PORT MAP (
-            In0 => bus_b,
+            In0 => bus_b_z,
             In1 => const,
             s => mb,
             Z => bus_b_mux
@@ -135,5 +138,8 @@ begin
             s => md,
             Z => d_data
         );
-        
+
+        bus_a <= bus_a_z;
+        bus_b <= bus_b_mux;
+                
 end Behavioral;
