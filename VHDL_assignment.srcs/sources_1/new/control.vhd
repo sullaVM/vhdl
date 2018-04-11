@@ -33,7 +33,8 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 --use UNISIM.VComponents.all;
 
 entity control is
---  Port ( );
+    Port (reset : in std_logic
+    );
 end control;
 
 architecture Behavioral of control is
@@ -100,6 +101,25 @@ architecture Behavioral of control is
        Port (x : in std_logic_vector(2 downto 0);
          y : out std_logic_vector(15 downto 0));
    end component;
+   
+   component extend
+       Port (dr, sb : in std_logic_vector(2 downto 0);
+           ext : out std_logic_vector(15 downto 0));
+   end component;
+   
+   component pc
+       Port (extend : in std_logic_vector(15 downto 0);
+           pl, pi, reset : in std_logic;
+           Clk : in std_logic;
+           y : out std_logic_vector(15 downto 0));
+   end component;
+   
+   component mux2_8bit
+      Port (In0 : in std_logic_vector(7 downto 0);
+           In1 : in std_logic_vector(7 downto 0);
+           s : in std_logic;
+           Z : out std_logic_vector(7 downto 0));
+   end component;
     
     -- Signals
     -- datapath
@@ -137,8 +157,12 @@ architecture Behavioral of control is
     -- mux_m
     signal mux_m_z : std_logic_vector(15 downto 0);
     
+    -- mux_c
+    signal mux_c_out, opcode : std_logic_vector(7 downto 0);
+    
     -- pc
-    signal pc : std_logic_vector(15 downto 0);
+    signal ext : std_logic_vector(15 downto 0);
+    signal program_cnt : std_logic_vector(15 downto 0);
     
     constant Clk_time : Time := 30ns;
     signal Clk : std_logic := '0';
@@ -233,9 +257,31 @@ begin
           
     mux_m : mux2_16bit port map (
         In0 => bus_a,
-        In1 => pc,
+        In1 => program_cnt,
         s => mm,
         Z => mux_m_z
+    );
+    
+    extender : extend port map (
+        dr => dr,
+        sb => sb,
+        ext => ext
+    );
+    
+    prog_count : pc port map (
+        extend => ext,
+        pi => pi,
+        pl => pl,
+        reset => reset,
+        Clk => Clk,
+        y => program_cnt
+    );
+
+    mux_c : mux2_8bit port map (
+        In0 => na,
+        In1 => opcode,
+        s => mc,
+        Z => mux_c_out
     );
     
     mem_address <= unsigned(mux_m_z);

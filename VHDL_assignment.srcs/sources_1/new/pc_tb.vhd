@@ -37,14 +37,14 @@ end pc_tb;
 
 architecture Behavioral of pc_tb is
     component pc
-        Port (dr, sb : in std_logic_vector(2 downto 0);
+        Port (extend : in std_logic_vector(15 downto 0);
             pl, pi, reset : in std_logic;
             Clk : in std_logic;
             y : out std_logic_vector(15 downto 0));
     end component;
     
     -- inputs
-    signal dr, sb : std_logic_vector(2 downto 0);
+    signal extend : std_logic_vector(15 downto 0);
     signal pl, pi, reset : std_logic;
     
     constant Clk_time : Time := 10ns;
@@ -57,8 +57,7 @@ begin
     Clk <= not Clk after Clk_time / 2;
 
     pc0 : pc port map (
-        dr => dr,
-        sb => sb,
+        extend => extend,
         pl => pl,
         pi => pi,
         reset => reset,
@@ -68,19 +67,19 @@ begin
     
     stim_proc : process
     begin
-    
+        
+        reset <= '1';
+        
+        wait for 30 ns;
+        
         reset <= '0';
-        dr <= "000"; 
-        sb <= "001";
-        pl <= '0';
         pi <= '1';
         
---        wait for 30 ns;
+        wait for 30 ns;
+        extend <= X"0005";
+        pi <= '0';
+        pl <= '1';
         
---        dr <= "000"; 
---        sb <= "010";
---        pl <= '1';
---        pi <= '0';
         
         wait;
     end process;
