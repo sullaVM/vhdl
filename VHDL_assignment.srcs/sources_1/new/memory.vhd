@@ -50,7 +50,7 @@ architecture Behavioral of memory is
         
             variable data_mem : mem_array := (
                    
-            X"0000", X"0000", X"0000", X"0000",
+            X"0041", X"0000", X"0000", X"0000",
             X"0000", X"0000", X"0000", X"0000",
             X"0000", X"0000", X"0000", X"0000",
             X"0000", X"0000", X"0000", X"0000",

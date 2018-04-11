@@ -59,7 +59,7 @@ begin
 memory_m : process (IN_CAR)
     variable control_mem : mem_array := ( 
 
-            X"FFFFFFF", X"FFFFFFF", X"FFFFFFF", X"FFFFFFF",
+            X"003C306", X"003C226", X"FFFFFFF", X"FFFFFFF",
             X"FFFFFFF", X"FFFFFFF", X"FFFFFFF", X"FFFFFFF",
             X"FFFFFFF", X"FFFFFFF", X"FFFFFFF", X"FFFFFFF",
             X"FFFFFFF", X"FFFFFFF", X"FFFFFFF", X"FFFFFFF",
@@ -152,7 +152,7 @@ memory_m : process (IN_CAR)
         RW <= control_out(2);
         MD <= control_out(3);
         FS <= control_out (8 downto 4);
-        MB <= control_out(0);
+        MB <= control_out(9);
         TB <= control_out(10);
         TA <= control_out(11);
         TD <= control_out(12);

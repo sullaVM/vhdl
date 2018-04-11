@@ -73,7 +73,7 @@ begin
         load => '1',
         Clk => Clk,
         Q => car_val
-    );
+    );  
     
     final_car(7 downto 0) <= opcode when con = '1' else
                             inc(7 downto 0);

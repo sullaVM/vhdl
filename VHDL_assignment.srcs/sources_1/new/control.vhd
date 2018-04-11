@@ -33,7 +33,11 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 --use UNISIM.VComponents.all;
 
 entity control is
-    Port (reset : in std_logic
+    Port (reset : in std_logic;
+            Clk : in std_logic;
+            memory_data, prg_c : out std_logic_vector(15 downto 0);
+            control_mem_data : out std_logic_vector(27 downto 0); 
+            reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7 : out std_logic_vector(15 downto 0)
     );
 end control;
 
@@ -108,7 +112,7 @@ architecture Behavioral of control is
    end component;
    
    component pc
-       Port (extend : in std_logic_vector(15 downto 0);
+        Port (extend : in std_logic_vector(15 downto 0);
            pl, pi, reset : in std_logic;
            Clk : in std_logic;
            y : out std_logic_vector(15 downto 0));
@@ -120,12 +124,21 @@ architecture Behavioral of control is
            s : in std_logic;
            Z : out std_logic_vector(7 downto 0));
    end component;
+   
+   component car
+        Port (opcode : in std_logic_vector(7 downto 0);
+            reset : in std_logic;
+            con : in std_logic;
+            Clk : in std_logic;
+            car_out : out std_logic_vector(7 downto 0)
+   );
+   end component;
     
     -- Signals
     -- datapath
     signal const, data_d_in : std_logic_vector(15 downto 0);
-    signal reg0, reg1, reg2, reg3, 
-           reg4, reg5, reg6, reg7 : std_logic_vector(15 downto 0);
+--    signal reg0, reg1, reg2, reg3, 
+--           reg4, reg5, reg6, reg7 : std_logic_vector(15 downto 0);
     signal rw, td, tb, mb, md : std_logic;
     signal v_flag, c_flag, n_flag, z_flag : std_logic;
     signal not_z_flag, not_c_flag : std_logic;
@@ -164,15 +177,14 @@ architecture Behavioral of control is
     signal ext : std_logic_vector(15 downto 0);
     signal program_cnt : std_logic_vector(15 downto 0);
     
-    constant Clk_time : Time := 30ns;
-    signal Clk : std_logic := '0';
+
      
 begin
-    Clk <= not Clk after Clk_time / 2;
+
 
     dp: datapath port map (
         const => const,
-        data_d_in => data_d_in,
+        data_d_in => read_data,
         fs => fs,
         rw => rw,
         td => td,
@@ -263,15 +275,15 @@ begin
     );
     
     extender : extend port map (
-        dr => dr,
-        sb => sb,
+        dr => ir_q(7 downto 5),
+        sb => ir_q(2 downto 0),
         ext => ext
     );
     
     prog_count : pc port map (
         extend => ext,
-        pi => pi,
         pl => pl,
+        pi => pi,
         reset => reset,
         Clk => Clk,
         y => program_cnt
@@ -279,12 +291,43 @@ begin
 
     mux_c : mux2_8bit port map (
         In0 => na,
-        In1 => opcode,
+        In1(6 downto 0) => ir_q(14 downto 8),
+        In1(7) => '0',
         s => mc,
         Z => mux_c_out
     );
     
+    car0 : car port map (
+        opcode => mux_c_out,
+        reset => reset,
+        con => mux_s_z,
+        Clk => Clk,
+        car_out => in_car
+    );
+   
+    
     mem_address <= unsigned(mux_m_z);
+    
+    
+    memory_data <= read_data;
+    
+    control_mem_data(0) <= mw;
+    control_mem_data(1) <= mm;
+    control_mem_data(2) <= rw;
+    control_mem_data(3) <= md;
+    control_mem_data(8 downto 4) <= fs;
+    control_mem_data(9) <= mb;
+    control_mem_data(10) <= tb;
+    control_mem_data(11) <= ta;
+    control_mem_data(12) <= td;
+    control_mem_data(13) <= pl;
+    control_mem_data(14) <= pi;
+    control_mem_data(15) <= il;
+    control_mem_data(16) <= mc;
+    control_mem_data(19 downto 17) <= ms;
+    control_mem_data(27 downto 20) <= na;
+    
+    prg_c <= program_cnt;
         
         
 end Behavioral;
